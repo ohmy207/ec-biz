@@ -1,0 +1,15 @@
+.edpproj
+.svn
+.idea
+npm-debug.log
+Desktop.ini
+Thumbs.db
+.DS_Store
+*.tmp
+*.bak
+*.sw
+node_modules/
+output/
+dep/
+tool/cache/
+src/vendor

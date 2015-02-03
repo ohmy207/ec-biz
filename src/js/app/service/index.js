@@ -8,5 +8,6 @@
 define([
     './galleries',
     './gallery'
-], function () {
+], function() {
+
 });

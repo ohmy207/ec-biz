@@ -1,4 +1,4 @@
-define(['./app'], function(app) {
+define(['app'], function(app) {
     'use strict';
     return app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -19,7 +19,6 @@ define(['./app'], function(app) {
                 }
             }
         })
-
         .state('app.about', {
             url: "/about",
             views: {
@@ -29,6 +28,7 @@ define(['./app'], function(app) {
                 }
             }
         });
-        $urlRouterProvider.otherwise('/app/home');
+
+        $urlRouterProvider.otherwise('/app/about');
     });
 });

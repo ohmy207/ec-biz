@@ -2,5 +2,6 @@ define([
     './app-ctrl',
     './home-ctrl',
     './about-ctrl'
-], function () {
+], function() {
+    
 });

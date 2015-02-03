@@ -1,11 +1,13 @@
+/**
+ * loads sub modules and wraps them up into the main module
+ * this should be used for top-level module definitions only
+ */
 define([
     'angular',
-    'uiRouter',
-    'ngResource',
-    'uiBootstrap',
-    './controllers/index',
-    './directives/index',
-    './services/index'
+
+    'app/controller/index',
+    'app/directive/index',
+    'app/service/index'
 ], function(ng) {
     'use strict';
 
@@ -15,6 +17,7 @@ define([
         'app.directives',
         'ui.router',
         'ui.bootstrap',
-        'ngResource'
+        'ngResource',
+        'ngAnimate'
     ]);
 });

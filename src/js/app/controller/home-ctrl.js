@@ -7,27 +7,18 @@ define(['./module'], function(controllers) {
             };
 
             $scope.classes = [
-
                 {
-
                     "Name": "温度 ",
-
                     "Options": ["Cold", "Hot", "Normal"]
-
                 },
-
                 {
-
                     "Name": "份量 ",
-
                     "Options": ["Big", "Middle", "Small"]
-
                 }
-
             ];
 
             $scope.SelectdCollection = {};
-            window.e  =$scope
+            window.e = $scope
             $scope.submit = function() {
                 console.log($scope.SelectdCollection);
             };
@@ -58,7 +49,7 @@ define(['./module'], function(controllers) {
             };
 
             $scope.submit = function() {
-                console .log($scope. SelectdCollection);
+                console.log($scope.SelectdCollection);
             }
         }
     ]);

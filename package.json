@@ -1,0 +1,22 @@
+{
+    "name": "sc-biz",
+    "version": "0.0.1",
+    "description": "### 1、设计目标",
+    "main": "index.js",
+    "directories": {
+        "doc": "doc"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mycoin/ec-biz.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mycoin/ec-biz/issues"
+    },
+    "homepage": "https://github.com/mycoin/ec-biz"
+}

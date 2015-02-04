@@ -12,4 +12,4 @@ node_modules/
 output/
 dep/
 tool/cache/
-src/vendor
+app/vendor

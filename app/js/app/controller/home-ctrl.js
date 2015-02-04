@@ -18,7 +18,7 @@ define(['./module'], function(controllers) {
             ];
 
             $scope.SelectdCollection = {};
-            window.e = $scope
+            
             $scope.submit = function() {
                 console.log($scope.SelectdCollection);
             };

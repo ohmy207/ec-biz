@@ -1,9 +1,9 @@
 {
-    "directory": "src/vendor/",
+    "directory": "app/vendor/",
     "json": "bower.json",
     "endpoint": "https://bower.herokuapp.com",
     "searchpath": "",
     "scripts": {
-        "postinstall": "ls src/vendor/"
+        "postinstall": "ls app/vendor/"
     }
 }

@@ -16,10 +16,13 @@ require.config({
         'angular-resource': 'vendor/angular-resource/angular-resource',
         'angular-route': 'vendor/angular-ui-router/release/angular-ui-router',
         'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize',
+        'angular-ui-utils': 'vendor/angular-ui-utils/ui-utils',
 
         'ready': 'vendor/requirejs-domready/domReady',
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',
-        'ui-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls'
+        'ui-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls',
+
+        'es5-sham' : 'vendor/es5-shim/es5-sham.js'
     },
 
     // angular does not support AMD out of the box, put it in a shim
@@ -40,6 +43,9 @@ require.config({
             deps: ['angular']
         },
         'angular-route': {
+            deps: ['angular']
+        },
+        'angular-ui-utils': {
             deps: ['angular']
         },
         'angular-sanitize': {

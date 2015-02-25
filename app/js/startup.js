@@ -25,37 +25,7 @@ define([
      * place operations that need to initialize prior to app start here
      * using the `run` function on the top-level module
      */
-    require(['ready!', 'angular-animate', 'angular-route', 'angular-resource', 'ui-bootstrap'], function() {
+    require(['ready!', 'angular-animate', 'angular-route', 'angular-resource', 'angular-ui-utils', 'ui-bootstrap'], function() {
         angular.bootstrap(document, ['app']);
     });
 });
-
-
-var group = [
-
-    function(context, next) {
-        console.log(1);
-        next();
-    },
-    function(context, next) {
-        console.log(2);
-        setTimeout(function() {
-            next();
-        }, 1000);
-    },
-    function(context, next) {
-        next();
-    }
-];
-
-function invoker() {
-    var group = [].slice.call(arguments, 0);
-    var next = function() {
-        if (group.length) {
-            group.shift()(null, next);
-        } else {
-            console.log('...');
-        }
-    };
-    return next;
-}

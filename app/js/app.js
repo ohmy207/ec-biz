@@ -17,6 +17,7 @@ define([
         'app.directives',
         'ui.router',
         'ui.bootstrap',
+        'ui.utils',
         'ngResource',
         'ngAnimate'
     ]);

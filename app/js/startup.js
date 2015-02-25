@@ -2,7 +2,7 @@
  * bootstraps angular onto the window.document node
  * NOTE: the ng-app attribute should not be on the index.html when using ng.bootstrap
  */
-if (!window.console || !console.firebug) {
+if (!window.console || !console.info) {
     var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
         "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"
     ];
@@ -29,3 +29,33 @@ define([
         angular.bootstrap(document, ['app']);
     });
 });
+
+
+var group = [
+
+    function(context, next) {
+        console.log(1);
+        next();
+    },
+    function(context, next) {
+        console.log(2);
+        setTimeout(function() {
+            next();
+        }, 1000);
+    },
+    function(context, next) {
+        next();
+    }
+];
+
+function invoker() {
+    var group = [].slice.call(arguments, 0);
+    var next = function() {
+        if (group.length) {
+            group.shift()(null, next);
+        } else {
+            console.log('...');
+        }
+    };
+    return next;
+}

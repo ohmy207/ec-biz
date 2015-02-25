@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="http://style.c.aliimg.com/fdevlib/css/lofty/port/lofty.css" rel="stylesheet"></link>
+        <style type="text/css">
+        
+
+            .textarea {
+                padding : 0;
+                height : 120px;
+                width : 500px;
+                border : 1px solid #CCC;
+                font-size : 12px;
+            }
+            #container {
+                position:relative;
+                width:200px;
+                padding: 100px;
+            }
+
+.atwho-view {
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.fui-autocomplete-fixed .cur {
+    background: #3366FF;
+    color: white;
+}
+.fui-autocomplete-fixed .cur small {
+    color: white;
+}
+
+.fui-autocomplete-fixed {
+    margin-left: -4px;
+    padding: 4px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.fui-autocomplete-fixed ul {
+    max-height: 225px;
+    overflow-y: scroll
+}
+
+.fui-autocomplete-fixed ul li.fui-autocomplete-item {
+    height: 41px;
+    line-height: 1.54;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 2px
+}
+
+.fui-autocomplete-fixed ul li.fui-autocomplete-item img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 50%
+}
+
+.fui-autocomplete-fixed ul li.fui-autocomplete-item .item-indent {
+    padding: 1px 0 0 8px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.fui-autocomplete-fixed ul li.fui-autocomplete-current-item {
+    background: #13bd9c;
+    color: #FFF
+}
+
+        </style> 
+        <script src="http://style.c.aliimg.com/fdevlib/js/lofty/port/lofty.js"></script> 
+        <script src="http://style.c.aliimg.com/fdevlib/js/gallery/jquery/jquery-latest.js"></script> 
+    </head> 
+    <body>
+        <div id="container">
+            <textarea id="inputor" class="textarea"></textarea>
+            <div id="pop"></div>
+        </div>
+        <script type="text/javascript" src="at.js"></script>
+        <script type="text/javascript">
+
+        'http://echo.alibaba-inc.com/ifb/ajax/assignPersonList.jsx?_input_charset=utf-8&name=s';
+        var at_config = {
+            
+            
+        }
+        jQuery('#inputor').atwho()
+        </script>
+    </body>
+</html>
+
+

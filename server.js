@@ -3,10 +3,11 @@ var path = require('path');
 var exec = require('child_process').exec;
 
 
-function invoker(group, callback) {
+function invoker(group, param, context) {
+    var caller;
     var next = function() {
         if (group.length) {
-            group.shift()(next);
+            group.shift().apply(context, (param || []).concat([next]));
         }
     };
     return next;
@@ -36,7 +37,8 @@ invoker([
             next();
         }
     },
-    function() {
+    function(next) {
         require('./lib/server');
+        next();
     }
 ])();

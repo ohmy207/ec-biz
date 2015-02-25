@@ -8,6 +8,7 @@ Thumbs.db
 *.tmp
 *.bak
 *.sw
+*.dump
 node_modules/
 output/
 dep/

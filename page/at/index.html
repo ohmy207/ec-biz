@@ -18,25 +18,9 @@
                 padding: 100px;
             }
 
-.atwho-view {
-    position:absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    margin-top: 18px;
-    background: white;
-    color: black;
-    border: 1px solid #DDD;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    min-width: 120px;
-    max-height: 200px;
-    overflow: auto;
-    z-index: 11110 !important;
-}
-
 .fui-autocomplete-fixed .cur {
     background: #3366FF;
+    cursor: pointer;
     color: white;
 }
 .fui-autocomplete-fixed .cur small {
@@ -44,7 +28,6 @@
 }
 
 .fui-autocomplete-fixed {
-    margin-left: -4px;
     padding: 4px;
     position:absolute;
     top: 0;
@@ -103,12 +86,6 @@
         </div>
         <script type="text/javascript" src="at.js"></script>
         <script type="text/javascript">
-
-        'http://echo.alibaba-inc.com/ifb/ajax/assignPersonList.jsx?_input_charset=utf-8&name=s';
-        var at_config = {
-            
-            
-        }
         jQuery('#inputor').atwho()
         </script>
     </body>

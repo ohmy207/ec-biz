@@ -1351,28 +1351,28 @@
         return result || this;
     };
 
+    // 加载联系人
     var loadMember = function(wd, callback) {
-        $.ajax({
-            url: 'data.json',
-            type: "GET",
-            dataType: "json",
-            data: '_input_charset=utf-8&name=' + encodeURIComponent(wd),
-            success: function(data) {
-                callback(data);
-            },
-            error: function() {
-                callback([]);
-            }
-        });
+        if (wd && wd.length > 0) {
+            $.ajax({
+                url: 'data.json',
+                type: "GET",
+                dataType: "json",
+                data: '_input_charset=utf-8&name=' + encodeURIComponent(wd),
+                success: function(data) {
+                    callback(data);
+                },
+                error: function() {
+                    callback([]);
+                }
+            });
+        }
     };
-
+    
     $.fn.atwho["default"] = {
         at: '@',
-        alias: undefined,
-        data: null,
         insertTpl: "@${text}(${staffId})",
         searchKey: "text",
-        suffix: undefined,
         hideWithoutSuffix: false,
         startWithSpace: true,
         highlightFirst: true,

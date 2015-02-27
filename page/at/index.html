@@ -18,16 +18,9 @@
                 padding: 100px;
             }
 
-.fui-autocomplete-fixed .cur {
-    background: #3366FF;
-    cursor: pointer;
-    color: white;
-}
-.fui-autocomplete-fixed .cur small {
-    color: white;
-}
 
-.fui-autocomplete-fixed {
+
+.complate-at {
     padding: 4px;
     position:absolute;
     top: 0;
@@ -43,13 +36,27 @@
     overflow: auto;
     z-index: 11110 !important;
 }
-
-.fui-autocomplete-fixed ul {
+.complate-at .cur {
+    background: #3366FF;
+    cursor: pointer;
+    color: white;
+}
+.complate-at .cur small {
+    color: white;
+}
+.complate-at ul {
     max-height: 225px;
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 
-.fui-autocomplete-fixed ul li.fui-autocomplete-item {
+.complate-at .complate-at-group {
+    background: none;
+    color: #999;
+    padding: 0 10px;
+    line-height: 2.2;
+}
+
+.complate-at ul li.complate-at-item {
     height: 41px;
     line-height: 1.54;
     white-space: nowrap;
@@ -57,23 +64,24 @@
     padding: 2px
 }
 
-.fui-autocomplete-fixed ul li.fui-autocomplete-item img {
+.complate-at ul li.complate-at-item img {
     width: 40px;
     height: 40px;
     float: left;
     border-radius: 50%
 }
 
-.fui-autocomplete-fixed ul li.fui-autocomplete-item .item-indent {
+.complate-at ul li.complate-at-item .item-indent {
     padding: 1px 0 0 8px;
     white-space: nowrap;
     overflow: hidden
 }
 
-.fui-autocomplete-fixed ul li.fui-autocomplete-current-item {
+.complate-at ul li.complate-at-current-item {
     background: #13bd9c;
     color: #FFF
 }
+
 
         </style> 
         <script src="http://style.c.aliimg.com/fdevlib/js/lofty/port/lofty.js"></script> 

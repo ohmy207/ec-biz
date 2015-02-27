@@ -690,19 +690,25 @@
         };
 
         Controller.prototype.insertContentFor = function($li) {
-            var data, tpl;
-            tpl = this.getOpt('insertTpl');
-            data = $.extend({}, $li.data('item-data'), {
-                'atwho-at': this.at
-            });
-            return this.callbacks("tplEval").call(this, tpl, data);
+            var data, tpl, type;
+
+            type = $li.data('type');
+            if (type == 'item') {
+                tpl = this.getOpt('insertTpl');
+                data = $.extend({}, $li.data('item-data'), {
+                    'atwho-at': this.at
+                });
+                return this.callbacks("tplEval")(tpl, data);
+            } else {
+                return $li.text();
+            }
         };
 
-        Controller.prototype.renderView = function(data) {
+        Controller.prototype.renderView = function(data, type) {
             var searchKey;
             searchKey = this.getOpt("searchKey");
             data = this.callbacks("sorter").call(this, this.query.text, data.slice(0, 1001), searchKey);
-            return this.view.render(data.slice(0, this.getOpt('limit')));
+            return this.view.render(data.slice(0, this.getOpt('limit')), type);
         };
 
         Controller.arrayToDefaultHash = function(data) {
@@ -729,9 +735,9 @@
             if (!(query = this.catchQuery(e))) {
                 return;
             }
-            _callback = function(data) {
+            _callback = function(data, type) {
                 if (data && data.length > 0) {
-                    return this.renderView(this.constructor.arrayToDefaultHash(data));
+                    return this.renderView(this.constructor.arrayToDefaultHash(data), type);
                 } else {
                     return this.view.hide();
                 }
@@ -1059,7 +1065,7 @@
     View = (function() {
         function View(context) {
             this.context = context;
-            this.$el = $("<div class='fui-autocomplete-fixed'><ul class='fui-autocomplete-fixed-ul'></ul></div>");
+            this.$el = $("<div class='complate-at'><ul class='complate-at-ul'></ul></div>");
             this.timeoutID = null;
             this.context.$el.append(this.$el);
             this.bindEvent();
@@ -1080,10 +1086,10 @@
         View.prototype.bindEvent = function() {
             var $menu;
             $menu = this.$el.find('ul');
-            return $menu.on('mouseenter.fui-autocomplete-fixed', 'li', function(e) {
+            return $menu.on('mouseenter.complate-at', 'li', function(e) {
                 $menu.find('.cur').removeClass('cur');
                 return $(e.currentTarget).addClass('cur');
-            }).on('click.fui-autocomplete-fixed', 'li', (function(_this) {
+            }).on('click.complate-at', 'li', (function(_this) {
                 return function(e) {
                     $menu.find('.cur').removeClass('cur');
                     $(e.currentTarget).addClass('cur');
@@ -1191,25 +1197,42 @@
             }
         };
 
-        View.prototype.render = function(list) {
-            var $li, $ul, item, li, tpl, _i, _len;
+        View.prototype.render = function(list, type) {
+            var $li, $ul, item, li, tpl, _len, html;
             if (!($.isArray(list) && list.length > 0)) {
                 this.hide();
                 return;
             }
             this.$el.find('ul').empty();
             $ul = this.$el.find('ul');
-            tpl = this.context.getOpt('displayTpl');
-            for (_i = 0, _len = list.length; _i < _len; _i++) {
-                item = list[_i];
-                item = $.extend({}, item, {
-                    'atwho-at': this.context.at
-                });
-                li = this.context.callbacks("tplEval").call(this.context, tpl, item);
-                $li = $(this.context.callbacks("highlighter").call(this.context, li, this.context.query.text));
-                $li.data("item-data", item);
-                $ul.append($li);
+
+            if (type) {
+                tpl = this.context.getOpt('displayTpl');
+                for (var i = 0, len = list.length; i < len; i++) {
+                    item = list[i];
+                    item = $.extend({}, item, {
+                        'atwho-at': this.context.at
+                    });
+                    li = $(this.context.callbacks("tplEval").call(this.context, tpl, item));
+                    li.data("item-data", item);
+                    $ul.append(li);
+                }
+            } else {
+                tpl = this.context.getOpt('groupTpl');
+                html = [];
+
+                for (var i = 0, len = list.length; i < len; i++) {
+                    item = list[i];
+                    item = $.extend({}, item, {
+                        'atwho-at': this.context.at
+                    });
+                    html.push(this.context.callbacks("tplEval").call(this.context, tpl, item));
+                }
+                html = html.join(' ');
+                li = $('<li class="complate-at-group" data-type="group">' + html + '</li>');
+                $ul.append(li);
             }
+
             this.show();
             if (this.context.getOpt('highlightFirst')) {
                 return $ul.find("li:first").addClass("cur");
@@ -1287,16 +1310,6 @@
                 return "";
             }
         },
-        highlighter: function(li, query) {
-            var regexp;
-            if (!query) {
-                return li;
-            }
-            regexp = new RegExp(">\\s*(\\w*?)(" + query.replace("+", "\\+") + ")(\\w*)\\s*<", 'ig');
-            return li.replace(regexp, function(str, $1, $2, $3) {
-                return '> ' + $1 + '<strong>' + $2 + '</strong>' + $3 + ' <';
-            });
-        },
         beforeInsert: function(value, $li) {
             return value;
         },
@@ -1353,28 +1366,30 @@
 
     // 加载联系人
     var loadMember = function(wd, callback) {
+        var type = !/^\-(p|d)/.test(wd);
         if (wd && wd.length > 0) {
             $.ajax({
-                url: '/ifb/ajax/assignPersonList.jsx',
+                // url: '/common/ajax/SuggestionAt.jsx',
+                url: 'data.json',
                 type: "GET",
                 dataType: "json",
-                data: '_input_charset=utf-8&name=' + encodeURIComponent(wd),
-                success: function(data) {
-                    callback(data);
+                data: '_input_charset=utf-8&key=' + encodeURIComponent(wd),
+                success: function(list) {
+                    callback(list, type);
                 },
                 error: function() {
-                    callback([]);
+                    callback([], type);
                 }
             });
         }
     };
-    
+
     $.fn.atwho["default"] = {
         at: '@',
-        insertTpl: "@${text}(${staffId})",
+        insertTpl: "${atwho-at}${text}(${staffId})",
         searchKey: "text",
         hideWithoutSuffix: false,
-        startWithSpace: true,
+        startWithSpace: false,
         highlightFirst: true,
         limit: 5,
         maxLen: 20,
@@ -1384,6 +1399,7 @@
         callbacks: {
             remoteFilter: loadMember
         },
-        displayTpl: '<li class="fui-autocomplete-item"><img src="${img}" width="80px" height="80px" /><div class="item-indent"><div class="item-name">${text} - ${staffId}</div><div class="item-ext">${info}</div></div></li>'
+        groupTpl: '<span class="at-item">${atwho-at}${text}(${staffId})</span>',
+        displayTpl: '<li data-type="item" class="complate-at-item"><img src="${img}" width="80px" height="80px" /><div class="item-indent"><div class="item-name">${text} - ${staffId}</div><div class="item-ext">${info}</div></div></li>'
     };
 })();

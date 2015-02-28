@@ -5,7 +5,7 @@
  */
 require.config({
 
-    baseUrl: 'app',
+    baseUrl: 'src/',
 
     // alias libraries paths
     paths: {

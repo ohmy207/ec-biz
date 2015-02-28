@@ -8,7 +8,7 @@ define(['./app'], function(app) {
         .state('app', {
             url: "/app",
             abstract: true,
-            templateUrl: "app/page/tpl/layout.html",
+            templateUrl: "src/page/tpl/layout.html",
             controller: 'AppCtrl'
         })
 
@@ -16,7 +16,7 @@ define(['./app'], function(app) {
             url: "/home",
             views: {
                 'menuContent': {
-                    templateUrl: "app/page/tpl/home.html",
+                    templateUrl: "src/page/tpl/home.html",
                     controller: 'HomeCtrl'
                 }
             }
@@ -26,8 +26,23 @@ define(['./app'], function(app) {
             url: "/about",
             views: {
                 'menuContent': {
-                    templateUrl: "app/page/tpl/about.html",
+                    templateUrl: "src/page/tpl/about.html",
                     controller: 'AboutCtrl'
+                }
+            }
+        })
+        
+        .state('app.io', {
+            url: "/io",
+            views: {
+                'menuContent': {
+                    templateProvider: function($timeout, $stateParams) {
+
+                        console.log(arguments);
+                        return $timeout(function() {
+                            return '<h1>OK</h1>'
+                        }, 10);
+                    }
                 }
             }
         });

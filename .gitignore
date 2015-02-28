@@ -8,7 +8,7 @@
 .idea
 .svn
 .git
-app/vendor/
+src/vendor/
 dep/
 node_modules/
 npm-debug.log

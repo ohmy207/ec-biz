@@ -2,16 +2,55 @@
 
 ### 1、设计目标
 
-未来的发展趋势是前端后端只靠JSON(P)数据来进行通信，后端只需要处理JSON以及响应为JSON数据，展现层统一到前端模板渲染。同时前端的交互也通过 JSON 的形式回传给后端。未来的趋势就是：后端专注于提供API服务，前端专注模板渲染。
+一套比较全面的OPOA应用解决方案，用于快速启动一个单页应用。该项目已经完成大部分基础架构类的设计，只需要下载下来稍做修改即可。
+
+我希望实现以下功能：
+
+* 引入`库包管理`，科学合理使用框架
+* 支持`构建压缩`，提供hook自定义构建打包任务
+* 内置服务器，提供`请求转发`，`livereload`
+* `热部署`功能
+* `增量发布`，统一使用版本号区分资源
+
+还有很多...
+
+### 2、开发方式
+
+* 项目使用 `RequireJS` + `Bootstrap` + `Angular` 开发模式
+* 前端库采用 `bower` 管理，因此使用前请前往<http://bower.io>下载安装
+
+目录结构
+
+```
+├── README.md
+├── app/                  // 应用代码
+│   ├── config.js         // requireJS依赖配置
+│   ├── css/              // 样式
+│   ├── js/
+│   │   ├── app/
+│   │   ├── app.js        
+│   │   ├── routes.js     // 路由规则
+│   │   ├── startup.js
+│   └── page/
+│       └── tpl/          // 静态模板
+├── bower.json
+├── index.html            // 统一入口
+├── package.json
+├── Gruntfile.js
+└── tool/
+```
 
 
+使用方法
 
+```
+git clone git@github.com:mycoin/ec-biz.git && cd ec-biz
+node server.js
+```
+使用浏览器打开 <http://127.0.0.1:8787>
 
+###3、后续改进
 
-
-
-
-
-
-
-
+* 使用`grunt`来管理项目，目前不支持构建
+* 实现requireJS合并优化
+* `i18n`

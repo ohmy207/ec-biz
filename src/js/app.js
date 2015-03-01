@@ -5,14 +5,14 @@
 define([
     'angular',
 
+    './app/router/index',
     './app/controller/index',
     './app/directive/index',
     './app/service/index'
-], function(ng) {
+], function(angular, router, controller, directive, service) {
     'use strict';
 
-
-    var application = ng.module('application', [
+    var application = angular.module('application', [
         'app.services',
         'app.controllers',
         'app.directives',
@@ -22,5 +22,7 @@ define([
         'ngResource',
         'ngAnimate'
     ]);
+
+    console.debug('[app.js] createApp()');
     return application;
 });

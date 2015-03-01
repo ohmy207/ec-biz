@@ -30,7 +30,9 @@ define(['./app'], function(application) {
                     controller: 'AboutCtrl'
                 }
             }
-        })
+        });
+        console.debug('[routers.js] routers');
+
         $urlRouterProvider.otherwise('/app/home');
     });
 });

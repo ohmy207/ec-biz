@@ -4,5 +4,6 @@
  **/
 define(['angular'], function (ng) {
     'use strict';
+    console.debug('[filter/index.js]');
     return ng.module('app.filters', []);
 });

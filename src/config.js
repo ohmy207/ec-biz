@@ -65,5 +65,5 @@ require.config({
         // kick start application... see startup.js
         'js/startup'
     ],
-    urlArgs: "v=" + (+new Date())
+    urlArgs: "v=" + Math.random()
 });

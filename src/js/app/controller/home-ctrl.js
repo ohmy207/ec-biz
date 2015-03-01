@@ -6,7 +6,6 @@ define(['./module'], function(module) {
             $scope.res = {
                 message: "Welcome Home!"
             };
-            console.log(stateParams);
             $scope.classes = [{
                 "Name": "温度 ",
                 "Options": ["Cold", "Hot", "Normal"]

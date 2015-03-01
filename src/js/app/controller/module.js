@@ -1,5 +1,7 @@
-define(['angular'], function (ng) {
+define(['angular'], function(ng) {
     'use strict';
     console.debug('[controller/module.js] controller');
-    return ng.module('app.controllers', []);
-}); 
+    var controller = ng.module('app.controllers', []);
+
+    return controller
+});

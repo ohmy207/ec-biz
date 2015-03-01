@@ -1,24 +1,22 @@
 define(['./module'], function(module) {
     'use strict';
-    module.controller('HomeCtrl', ['$scope', 'Gallery',
-        function($scope, Gallery) {
+
+    module.controller('App.HomeCtrl', ['$scope', 'Gallery', '$stateParams',
+        function($scope, Gallery, stateParams) {
             $scope.res = {
                 message: "Welcome Home!"
             };
-
-            $scope.classes = [
-                {
-                    "Name": "温度 ",
-                    "Options": ["Cold", "Hot", "Normal"]
-                },
-                {
-                    "Name": "份量 ",
-                    "Options": ["Big", "Middle", "Small"]
-                }
-            ];
+            console.log(stateParams);
+            $scope.classes = [{
+                "Name": "温度 ",
+                "Options": ["Cold", "Hot", "Normal"]
+            }, {
+                "Name": "份量 ",
+                "Options": ["Big", "Middle", "Small"]
+            }];
 
             $scope.SelectdCollection = {};
-            
+
             $scope.submit = function() {
                 console.log($scope.SelectdCollection);
             };
@@ -42,10 +40,7 @@ define(['./module'], function(module) {
             }];
 
             $scope.closeAlert = function(index) {
-                $scope.alerts.push({
-                    type: 'danger',
-                    msg: 'Oh snap! Change a few things up and try submitting again.'
-                });
+                console.log(index);
             };
 
             $scope.submit = function() {

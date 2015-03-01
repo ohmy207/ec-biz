@@ -22,19 +22,13 @@ require.config({
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',
         'ui-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls',
 
-        'es5-sham' : 'vendor/es5-shim/es5-sham.js'
+        'es5-sham': 'vendor/es5-shim/es5-sham.js'
     },
 
     // angular does not support AMD out of the box, put it in a shim
     shim: {
-        'jquery': {
-            exports: 'jquery'
-        },
         'angular': {
             exports: 'angular'
-        },
-        'bootstrap': {
-            deps: ['jquery']
         },
         'angular-animate': {
             deps: ['angular']
@@ -53,6 +47,9 @@ require.config({
         },
         'bootstrap': {
             deps: ['jquery']
+        },
+        'jquery': {
+            exports: 'jquery'
         },
         'ui-bootstrap': {
             deps: ['angular', 'bootstrap']

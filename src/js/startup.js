@@ -3,11 +3,10 @@
  * NOTE: the ng-app attribute should not be on the index.html when using ng.bootstrap
  */
 (function() {
-    if (!window.console || !console.info) {
+    if ('undefined' == typeof window.console) {
         var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
             "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"
         ];
-
         window.console = {};
         for (var i = 0; i < names.length; i++) {
             window.console[names[i]] = function() {}
@@ -20,7 +19,7 @@ define([
     'angular',
     './app',
     './routes'
-], function(require, angular, app) {
+], function(require, angular, app, routes) {
     'use strict';
 
     /*

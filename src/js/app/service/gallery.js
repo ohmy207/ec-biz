@@ -22,6 +22,11 @@ define(['./module'], function(services) {
                     });
 
                     return defer.promise;
+                },
+
+                hot: function() {
+                    var defer = $q.defer();
+                    return defer.promise;
                 }
             }
         }

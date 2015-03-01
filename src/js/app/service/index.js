@@ -7,6 +7,4 @@
  **/
 define([
     './gallery'
-], function() {
-
-});
+]);

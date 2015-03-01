@@ -8,20 +8,25 @@ define([
     './app/router/index',
     './app/controller/index',
     './app/directive/index',
+    './app/filter/index',
     './app/service/index'
-], function(angular, router, controller, directive, service) {
+
+], function(angular, router, controller, directive, filter, service) {
     'use strict';
 
     var application = angular.module('application', [
         'app.services',
         'app.controllers',
         'app.directives',
-        'ui.router',
         'ui.bootstrap',
+        'ui.router',
         'ui.utils',
-        'ngResource',
-        'ngAnimate'
+        'ngAnimate',
+        'ngResource'
     ]);
+
+    // 注入过滤器函数
+    application.filter(filter);
 
     console.debug('[app.js] createApp()');
     return application;

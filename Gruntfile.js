@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     // 配置信息
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
+ 
         // Built-in web server
         'connect': {
             server: {

@@ -1,7 +1,7 @@
 define(['./module'], function(module) {
     'use strict';
 
-    function Controller(scope, Gallery, state, stateParams) {
+    var Controller = function(scope, Gallery, state, stateParams) {
 
         // 加载数据
         function loadData() {
@@ -45,9 +45,8 @@ define(['./module'], function(module) {
         };
 
         loadData();
-    }
-    Controller.$inject = ['$scope', 'Gallery', '$state', '$stateParams'];
+    };
 
     // 注册到上下文
-    module.controller('App.AboutCtrl', Controller);
+    module.controller('App.AboutCtrl', ['$scope', 'Gallery', '$state', '$stateParams', Controller]);
 });

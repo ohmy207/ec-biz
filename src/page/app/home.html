@@ -1,18 +1,3 @@
-<div ui-view="">
-    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" />{{alert.msg}}
+<div class="page-home-view" ng-init="loadData()">
+    <alert ng-repeat="alert in messages" type="{{alert.type}}" close="close($index);" />{{alert.msg}}
 </div>
-<div ng-repeat= "class in classes">
-    {{class.Name}}
-    <select ng-model="SelectdCollection[class.Name]" ng-options="option for option in class.Options" ></select>
-</div>
-<a class="btn btn-success" ng-click= "submit()">送出 </a>
-<div ng-init="friends = [{name:'John', age:25}, {name:'Mary', age:28}]">
-    I have {{friends.length}} friends. They are:
-    <ul>
-        <li ng-repeat="friend in friends">
-            [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
-        </li>
-    </ul>
-</div>
-
-<p>1 + 2 = {{ 1 + 2 }}</p>

@@ -1,6 +1,6 @@
-define(['./module'], function(controllers) {
+define(['./module'], function(module) {
     'use strict';
-    controllers.controller('AppCtrl', ['$scope', '$location',
+    module.controller('AppCtrl', ['$scope', '$location',
         function($scope, $location) {
             $scope.isActive = function(viewLocation) {
                 return viewLocation === $location.path();

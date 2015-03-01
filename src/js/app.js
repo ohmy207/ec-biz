@@ -11,7 +11,8 @@ define([
 ], function(ng) {
     'use strict';
 
-    return ng.module('app', [
+
+    var application = ng.module('application', [
         'app.services',
         'app.controllers',
         'app.directives',
@@ -21,4 +22,5 @@ define([
         'ngResource',
         'ngAnimate'
     ]);
+    return application;
 });

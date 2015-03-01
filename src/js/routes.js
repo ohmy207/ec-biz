@@ -1,6 +1,6 @@
-define(['./app'], function(app) {
+define(['./app'], function(application) {
     'use strict';
-    return app.config(function($stateProvider, $urlRouterProvider) {
+    return application.config(function($stateProvider, $urlRouterProvider) {
 
         //@see: https://github.com/angular-ui/ui-router/wiki#templates
         $stateProvider
@@ -31,22 +31,6 @@ define(['./app'], function(app) {
                 }
             }
         })
-        
-        .state('app.io', {
-            url: "/io",
-            views: {
-                'menuContent': {
-                    templateProvider: function($timeout, $stateParams) {
-
-                        console.log(arguments);
-                        return $timeout(function() {
-                            return '<h1>OK</h1>'
-                        }, 10);
-                    }
-                }
-            }
-        });
-
         $urlRouterProvider.otherwise('/app/home');
     });
 });

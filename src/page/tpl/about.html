@@ -1,1 +1,10 @@
-{{ galleries | json }}
+<input ng-model="wd">
+<input type="button" ng-click="loadData()" value="提交">
+<select ng-model="q" ng-change="change($event)">
+    <option ng-repeat="item in data.s">{{item}}</option>
+</select>
+<ul>
+    <li ng-repeat="item in data.s">
+        {{$index}}. <a href="http://www.baidu.com/s?wd={{item}}">{{item}}</a>
+    </li>
+</ul>

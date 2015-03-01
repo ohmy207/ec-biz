@@ -1,6 +1,6 @@
-define(['./module'], function(directives) {
+define(['./module'], function(module) {
     'use strict';
-    directives.directive('loadSrc', ['$timeout',
+    module.directive('loadSrc', ['$timeout',
         function($timeout) {
             return {
                 link: function(scope, element, attrs) {

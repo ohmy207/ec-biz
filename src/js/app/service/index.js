@@ -6,7 +6,6 @@
  * which avails each service of, for example, the `config` constants object.
  **/
 define([
-    './galleries',
     './gallery'
 ], function() {
 

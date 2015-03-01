@@ -28,7 +28,7 @@ invoker([
 
     // 检查依赖包安装
     function(next) {
-        if (!fs.existsSync('app/vendor')) {
+        if (!fs.existsSync('src/vendor')) {
             console.log('[npm] bower install.');
             exec("bower install", function(error, stdout, stderr) {
                 next();

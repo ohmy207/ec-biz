@@ -2,26 +2,26 @@ define(['./module'], function(services) {
     'use strict';
     services.factory('Gallery', ['$resource', '$q',
         function($resource, $q) {
-            var Gallery = $resource('http://www.minuotao.com/api/v1/galleries/:gallerySlug', {
-                callback: 'JSON_CALLBACK'
+            var Gallery = $resource('http://suggestion.baidu.com/su?wd=:word&json=1', {
+                cb: 'JSON_CALLBACK'
             }, {
-                'load': {
+                load: {
                     'method': 'JSONP'
                 }
             });
-
             return {
-                search: function(slug) {
-                    var q = $q.defer();
-                    Gallery.load({
-                        gallerySlug: slug
+                search: function(wd) {
+                    var defer = $q.defer();
+                    var params = {
+                        word: wd
+                    };
+                    Gallery.load(params, function(resp) {
+                        defer.resolve(resp);
                     }, function(resp) {
-                        q.resolve(resp);
-                    }, function(err) {
-                        q.reject(err);
-                    })
+                        defer.reject(resp);
+                    });
 
-                    return q.promise;
+                    return defer.promise;
                 }
             }
         }

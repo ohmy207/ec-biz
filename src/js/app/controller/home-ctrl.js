@@ -1,7 +1,7 @@
-define(['./module'], function(controllers) {
+define(['./module'], function(module) {
     'use strict';
-    controllers.controller('HomeCtrl', ['$scope', 'Galleries',
-        function($scope, Galleries) {
+    module.controller('HomeCtrl', ['$scope', 'Gallery',
+        function($scope, Gallery) {
             $scope.res = {
                 message: "Welcome Home!"
             };
@@ -23,11 +23,11 @@ define(['./module'], function(controllers) {
                 console.log($scope.SelectdCollection);
             };
 
-            $scope.galleries = {};
+            $scope.gallery = {};
 
             var loadData = function() {
-                Galleries.search('works').then(function(resp) {
-                    $scope.galleries = resp;
+                Gallery.search('works').then(function(resp) {
+                    $scope.gallery = resp;
                 });
             }
 

@@ -16,7 +16,7 @@ require.config({
         'angular-resource': 'vendor/angular-resource/angular-resource',
         'angular-route': 'vendor/angular-ui-router/release/angular-ui-router',
         'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize',
-        'angular-ui-utils': 'vendor/angular-ui-utils/ui-utils',
+        'angular-utils': 'vendor/angular-ui-utils/ui-utils',
 
         'ready': 'vendor/requirejs-domready/domReady',
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',

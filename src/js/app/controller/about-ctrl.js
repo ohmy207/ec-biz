@@ -1,20 +1,22 @@
-define(['./module'], function(controllers) {
+define(['./module'], function(module) {
     'use strict';
-    controllers.controller('AboutCtrl', ['$scope', 'Galleries',
-        function($scope, Galleries) {
+    module.controller('AboutCtrl', ['$scope', 'Gallery',
+        function($scope, Gallery) {
             $scope.res = {
                 message: "About Us!"
             };
+            $scope.data = {};
+            $scope.wd = '百度';
+            $scope.change = function($event) {
 
-            $scope.galleries = {};
-
-            var loadData = function() {
-                Galleries.search('sky').then(function(resp) {
-                    $scope.galleries = resp;
+            };
+            $scope.loadData = function() {
+                Gallery.search($scope.wd).then(function(resp) {
+                    $scope.data = resp;
                 });
-            }
+            };
 
-            loadData();
+            $scope.loadData();
         }
     ]);
 });

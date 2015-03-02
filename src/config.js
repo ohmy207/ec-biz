@@ -22,7 +22,8 @@ require.config({
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',
         'ui-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls',
 
-        'es5-sham': 'vendor/es5-shim/es5-sham.js'
+        'app': 'js/app',
+        'es5-sham': 'vendor/es5-shim/es5-sham'
     },
 
     // angular does not support AMD out of the box, put it in a shim

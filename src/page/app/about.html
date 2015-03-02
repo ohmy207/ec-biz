@@ -4,8 +4,8 @@
 .page-about-view .ct{padding: 10px;margin: 10px 0;border: 1px solid #EEE;line-height: 1.67;background: #FEFEFE;}
 .page-about-view span{display: inline-block;padding: 0 10px;}
 </style>
-<div class="page-about-view" ng-init="loadData()">
-    <form class="form-inline" ng-submit="submit();">
+<div class="page-about-view">
+    <form class="form-inline">
         <input ng-model="wd" type="text" class="form-control" placeholder="请输入关键词">
         <button type="submit" class="btn btn-primary" ng-click="click()">提交</button>
     </form>
@@ -15,6 +15,8 @@
             {{$index + 1}}. <a href="#/app/about/{{item}}">{{item}}</a>
         </span>
     </div>
+
+    {{hot|json}}
     <p align="right">查询时间：{{now|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 
 </div>

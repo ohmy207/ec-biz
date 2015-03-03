@@ -31,10 +31,19 @@ define([
 
     // 注入自定义模块
     application.factory(patch);
+
+    // 跨域安全策略申明
+    application.config(['$sceDelegateProvider',
+        function(sceDelegateProvider) {
+            sceDelegateProvider.resourceUrlWhitelist(
+                ['self', 'http://**']
+            );
+        }
+    ]);
+
     application.factory('Api', [
         '$state', '$stateParams', '$http',
         function(state, stateParams, http) {
-            
             return {
                 state: function() {
                     console.log('state');

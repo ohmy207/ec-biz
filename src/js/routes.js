@@ -40,6 +40,15 @@ define(['./app'], function(application) {
                         controller: 'App.AboutCtrl'
                     }
                 }
+            })
+
+            .state('app.external', {
+                url: "/external/{href:.*}",
+                views: {
+                    'screen': {
+                        controller: 'App.ExternalCtrl'
+                    }
+                }
             });
 
             console.debug('[routers.js] routers');

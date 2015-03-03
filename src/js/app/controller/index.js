@@ -1,5 +1,6 @@
 define([
     './app-ctrl',
     './home-ctrl',
-    './about-ctrl'
+    './about-ctrl',
+    './external-ctrl',
 ]);

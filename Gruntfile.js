@@ -18,13 +18,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 8828,
-                    base: function() {
-                        if (/release/.test(process.argv[3])) {
-                            return 'www';
-                        } else {
-                            return 'src';
-                        }
-                    }(),
+                    base: '.',
                     livereload: 35729,
                     middleware: function(connect, options, middleware) {
                         var fs = require('fs');
@@ -334,10 +328,4 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('update', function() {
-        global.lastModified++;
-    });
-
-    // 更新最后修改时间
-    global.lastModified = global.lastModified || 1;
 };

@@ -130,3 +130,4 @@
                    list.js
 
 当我们需要使用`list.js`的时候，必须写如下的代码：`require("../modules/js/list")`，但是从逻辑上说，更合理的写法应该是`require("../modules/list")`。因此我们不推荐在`modules`下面对源代码资源划分目录。
+

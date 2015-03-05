@@ -63,6 +63,7 @@
     "-W065": false,
     "-W069": false,
     "globals": {
+        "angular": true,
         "describe": true,
         "require": true,
         "define": true,

@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 var exec = require('child_process').exec;
 
-
 function invoker(group, param, context) {
     var caller;
     var next = function() {

@@ -11,7 +11,6 @@
         "catch",
         "finally"
     ],
-
     "requireSpaceBeforeBlockStatements": true,
     "requireSpacesInConditionalExpression": true,
 
@@ -69,9 +68,8 @@
         "checkParamNames": true,
         "requireParamTypes": true
     },
-    
+
     "requireDotNotation": null,
     "validateLineBreaks": null,
     "safeContextKeyword": null
-
 }

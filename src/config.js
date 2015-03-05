@@ -48,5 +48,5 @@ require.config({
         // kick start application... see startup.js
         'js/startup'
     ],
-    urlArgs: "v=" + Math.random()
+    urlArgs: "version=" + Math.random()
 });

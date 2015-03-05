@@ -3,7 +3,7 @@ define(['./module', 'app/components/patch'], function(module, patch) {
 
     var Controller = function(scope, Gallery, state, http, Api) {
 
-        console.log(Api);
+        // console.log(Api);
         // 加载数据
         function loadData() {
             Gallery.search(scope.wd).then(function(resp) {
@@ -27,6 +27,17 @@ define(['./module', 'app/components/patch'], function(module, patch) {
         // 当前时间
         scope.now = new Date;
 
+        scope.timer = setInterval(function() {
+            scope.now = new Date;
+
+            // 手动触发渲染
+            scope.$apply();
+        }, 1000);
+
+        scope.$on('$destroy', function() {
+            clearInterval(scope.timer);
+        });
+
         // 提交表单
         scope.submit = function() {
             var argv = {
@@ -42,13 +53,13 @@ define(['./module', 'app/components/patch'], function(module, patch) {
                 method: 'POST',
                 url: '/api/biz',
                 data: {
-                    log: 'redrect'
+                    log: 'rec'
                 },
                 transformRequest: patch.transformRequest('POST')
             }
             http(req).success(function(r) {
-                // 等待半秒出发提交
-                setTimeout(scope.submit.bind(scope), 20);
+                // 等待片刻提交
+                setTimeout(scope.submit.bind(scope), 1000);
             });
         };
         loadData();

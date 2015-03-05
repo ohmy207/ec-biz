@@ -13,8 +13,6 @@ define([
     'app/service/index'
 
 ], function(angular, router, controller, directive, filter, patch, service) {
-    'use strict';
-
     var application = angular.module('application', [
         'app.services',
         'app.controllers',
@@ -36,7 +34,7 @@ define([
     application.config(['$sceDelegateProvider',
         function(sceDelegateProvider) {
             sceDelegateProvider.resourceUrlWhitelist(
-                ['self', 'http://**']
+                ['self', 'http://**', 'https://**']
             );
         }
     ]);
@@ -51,7 +49,5 @@ define([
             }
         }
     ]);
-
-    console.debug('[app.js] createApp()');
     return application;
 });

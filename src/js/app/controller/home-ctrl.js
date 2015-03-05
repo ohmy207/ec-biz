@@ -11,7 +11,7 @@ define(['./module'], function(module) {
         }];
 
         scope.close = function(index) {
-            alert(index)
+            alert(index);
         };
     };
 

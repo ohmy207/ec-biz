@@ -28,6 +28,5 @@ define([
      */
     require(['ready!', 'angular-animate', 'angular-route', 'angular-resource', 'angular-utils', 'ui-bootstrap'], function() {
         angular.bootstrap(document, ['application']);
-        console.debug('angular.bootstrap()');
     });
 });

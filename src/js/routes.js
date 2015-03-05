@@ -50,8 +50,6 @@ define(['./app'], function(application) {
                     }
                 }
             });
-
-            console.debug('[routers.js] routers');
             urlRouterProvider.otherwise('/app/home');
         }
     ]);

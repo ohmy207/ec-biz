@@ -6,6 +6,5 @@
  * which avails each service of, for example, the `config` constants object.
  **/
 define(['angular'], function (ng) {
-    'use strict';
     return ng.module('app.services', []);
 });

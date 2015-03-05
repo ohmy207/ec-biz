@@ -48,7 +48,6 @@
 └── tool/
 ```
 
-
 使用方法
 
 ```
@@ -62,3 +61,16 @@ node server.js
 * 使用`grunt`来管理项目，目前不支持构建
 * 实现requireJS合并优化
 * `i18n`
+
+###4、更多文档
+
+* [项目目录结构规范](doc/directory-structure.md)
+* [RequireJS + Bootstrap + Angular 相关文档](doc/require-bootstrap-angular.md)
+* [项目架构解析](doc/project-architecture.md)
+
+***
+[nqliujiangtao@gmail.com](mailto:nqliujiangtao@gmail.com)
+
+
+
+

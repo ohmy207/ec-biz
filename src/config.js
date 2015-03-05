@@ -31,21 +31,6 @@ require.config({
         'angular': {
             exports: 'angular'
         },
-        'angular-animate': {
-            deps: ['angular']
-        },
-        'angular-resource': {
-            deps: ['angular']
-        },
-        'angular-route': {
-            deps: ['angular']
-        },
-        'angular-ui-utils': {
-            deps: ['angular']
-        },
-        'angular-sanitize': {
-            deps: ['angular']
-        },
         'bootstrap': {
             deps: ['jquery']
         },

@@ -113,7 +113,7 @@
     ...
 ```
 
-> [点击这里](sample/directory-structure.md)查看具体文件夹结构。
+> [点击这里](sample/directory-structure/)查看具体文件夹结构。
 
 待续。。。
 

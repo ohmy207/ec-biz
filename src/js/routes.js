@@ -1,4 +1,4 @@
-define(['./app'], function(application) {
+define(['angular', './app'], function(A, application) {
     'use strict';
     application.config(['$stateProvider', '$urlRouterProvider',
         function(stateProvider, urlRouterProvider) {
@@ -7,11 +7,10 @@ define(['./app'], function(application) {
                 var result = {},
                     views = parent(state);
 
-                angular.forEach(views, function(config, name) {
+                A.forEach(views, function(config, name) {
                     var autoName = (state.name).replace('.', '/');
                     if (!config.templateUrl) {
                         config.templateUrl = '/src/page/' + autoName + '.html';
-                        config.s = 'dd';
                     }
                     result[name] = config;
                 });

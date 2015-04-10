@@ -11,9 +11,8 @@ define([
     'app/filter/index',
     'app/components/patch',
     'app/service/index'
-
 ], function(angular, router, controller, directive, filter, patch, service) {
-    var application = angular.module('application', [
+    var app = angular.module('application', [
         'app.services',
         'app.controllers',
         'app.directives',
@@ -25,13 +24,13 @@ define([
     ]);
 
     // 注入过滤器函数
-    application.filter(filter);
+    app.filter(filter);
 
     // 注入自定义模块
-    application.factory(patch);
+    app.factory(patch);
 
     // 跨域安全策略申明
-    application.config(['$sceDelegateProvider',
+    app.config(['$sceDelegateProvider',
         function(sceDelegateProvider) {
             sceDelegateProvider.resourceUrlWhitelist(
                 ['self', 'http://**', 'https://**']
@@ -39,7 +38,7 @@ define([
         }
     ]);
 
-    application.factory('Api', [
+    app.factory('Api', [
         '$state', '$stateParams', '$http',
         function(state, stateParams, http) {
             return {
@@ -49,5 +48,5 @@ define([
             }
         }
     ]);
-    return application;
+    return app;
 });

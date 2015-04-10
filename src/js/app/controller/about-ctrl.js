@@ -2,22 +2,17 @@ define(['./module', 'app/components/patch'], function(module, patch) {
     'use strict';
 
     var Controller = function(scope, Gallery, state, http, Api) {
-
-        // console.log(Api);
         // 加载数据
         function loadData() {
             Gallery.search(scope.wd).then(function(resp) {
                 scope.data = resp;
             });
         }
-
         if (!state.params.wd) {
-            var argv = {
-                wd: '阿里巴巴'
-            };
-
             // 跳转函数
-            state.go('app.about', argv);
+            state.go('app.about', {
+                wd: '阿里巴巴'
+            });
             return null;
         }
 

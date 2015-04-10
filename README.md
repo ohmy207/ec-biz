@@ -49,9 +49,11 @@
 使用方法
 
 ```
+npm install -g bower
 git clone git@github.com:mycoin/ec-biz.git && cd ec-biz
 node server.js
 ```
+
 使用浏览器打开 <http://127.0.0.1:8787>
 
 ###3、后续改进

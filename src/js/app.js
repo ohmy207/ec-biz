@@ -1,52 +1,56 @@
-/**
- * loads sub modules and wraps them up into the main module
- * this should be used for top-level module definitions only
+/*
+ * Copyright 2014 Baidu Inc. All rights reserved.
+ *
+ * file:    app.js
+ * author:  mycoin (nqliujiangtao@gmail.com)
+ * date:    {{date}}
  */
-define([
-    'angular',
+'use strict';
 
-    'app/router/index',
-    'app/controller/index',
-    'app/directive/index',
-    'app/filter/index',
-    'app/components/patch',
-    'app/service/index'
-], function(angular, router, controller, directive, filter, patch, service) {
-    var app = angular.module('application', [
-        'app.services',
-        'app.controllers',
-        'app.directives',
-        'ui.bootstrap',
+define(['angular' /*, 'modules/config'*/ ], function(angular) {
+
+    // * loads sub modules and wraps them up into the `app` module
+    // * this should be used for top-level module definitions only
+    var app = angular.module('app', [
+
+        // 'app.service',
+        // 'app.controller',
+        // 'app.directive',
+
         'ui.router',
+        'ui.bootstrap',
         'ui.utils',
+
         'ngAnimate',
-        'ngResource'
+        'ngSanitize',
+        'ngResource',
+        'ngWebSocket'
     ]);
 
-    // 注入过滤器函数
-    app.filter(filter);
+    // var home = app.controller('App.Home', ['$scope', '$state',
+    //     function(scope, state) {
+    //         scope.template = state.params;
+    //         scope.href = "/page/"
+    //     }
+    // ]);
 
-    // 注入自定义模块
-    app.factory(patch);
+    // app.config(['$stateProvider', '$urlRouterProvider',
+    //     function(stateProvider, urlRouterProvider) {
+    //         stateProvider.state('home', {
+    //             url: "/app/home/:url",
+    //             controller: 'App.Home',
+    //             template: '<h1>inline {{template}} definition</h1><iframe class="embedding-if" ng-src="{{href}}"></iframe>',
+    //         });
+    //         urlRouterProvider.otherwise('/app/home/');
+    //     }
+    // ]);
 
-    // 跨域安全策略申明
-    app.config(['$sceDelegateProvider',
-        function(sceDelegateProvider) {
-            sceDelegateProvider.resourceUrlWhitelist(
-                ['self', 'http://**', 'https://**']
-            );
-        }
-    ]);
+    // 调试日志
+    app.log = function(message, type) {
+        type = type || 'debug';
+        console[type](message);
+    };
 
-    app.factory('Api', [
-        '$state', '$stateParams', '$http',
-        function(state, stateParams, http) {
-            return {
-                state: function() {
-                    console.log('state');
-                }
-            }
-        }
-    ]);
+    app.log('[app] angular.module("app")');
     return app;
 });

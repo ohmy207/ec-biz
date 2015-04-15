@@ -1,6 +1,0 @@
-define([
-    './app-ctrl',
-    './home-ctrl',
-    './about-ctrl',
-    './external-ctrl',
-]);

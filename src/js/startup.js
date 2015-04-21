@@ -28,9 +28,7 @@ define([
     'angular',
     './app',
     './config/router'
-
 ], function(require, angular, app) {
-
     /*
      * place operations that need to initialize prior to app start here
      * using the `run` function on the top-level module

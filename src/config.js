@@ -10,13 +10,14 @@ require.config({
     // alias libraries paths
     paths: {
         // 基础框架配置
-        'jquery': 'vendor/jquery/dist/jquery',
+        'jquery': 'vendor/jquery/jquery',
         'angular': 'vendor/angular/angular',
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',
 
         'angular-animate': 'vendor/angular-animate/angular-animate',
         'angular-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls',
         'angular-resource': 'vendor/angular-resource/angular-resource',
+        'angular-mocks': 'vendor/angular-mocks/angular-mocks',
         'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize',
         'angular-websocket': 'vendor/angular-websocket/angular-websocket',
         'angular-ui-router': 'vendor/angular-ui-router/release/angular-ui-router',
@@ -49,16 +50,8 @@ require.config({
     // angular does not support AMD out of the box, put it in a shim
     shim: {
         'angular': {
-            exports: 'angular'
-        },
-        'bootstrap': {
+            exports: 'angular',
             deps: ['jquery']
-        },
-        'jquery': {
-            exports: 'jquery'
-        },
-        'angular-bootstrap': {
-            deps: ['angular', 'bootstrap']
         }
     },
 

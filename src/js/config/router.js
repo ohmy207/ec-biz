@@ -23,12 +23,9 @@ define(['angular', '../app'], function(angular, app) {
         ]
     );
 
-
-
     return;
-    w
     // 配置路由规则
-    .config(
+    e.config(
         ['$stateProvider', '$urlRouterProvider',
             function(stateProvider, urlRouterProvider) {
                 stateProvider.decorator('views', function(state, parent) {

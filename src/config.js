@@ -29,8 +29,7 @@ require.config({
         // 业务模块配置
         'config': 'js/config',
         'modules': 'js/modules',
-        'components': 'js/components',
-        'page': 'page'
+        'components': 'js/components'
     },
 
     config: {
@@ -57,8 +56,6 @@ require.config({
             deps: ['jquery']
         }
     },
-
-    priority: ['jquery', 'angular'],
 
     deps: [
         // kick start application... see startup.js

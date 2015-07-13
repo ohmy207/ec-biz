@@ -7,7 +7,7 @@
  */
 'use strict';
 
-define(['angular' /*, 'modules/config'*/ ], function(angular) {
+define(['angular', 'modules/config'], function(angular, config) {
 
     // * loads sub modules and wraps them up into the `app` module
     // * this should be used for top-level module definitions only
@@ -27,29 +27,14 @@ define(['angular' /*, 'modules/config'*/ ], function(angular) {
         'ngWebSocket'
     ]);
 
-    // var home = app.controller('App.Home', ['$scope', '$state',
-    //     function(scope, state) {
-    //         scope.template = state.params;
-    //         scope.href = "/page/"
-    //     }
-    // ]);
-
-    // app.config(['$stateProvider', '$urlRouterProvider',
-    //     function(stateProvider, urlRouterProvider) {
-    //         stateProvider.state('home', {
-    //             url: "/app/home/:url",
-    //             controller: 'App.Home',
-    //             template: '<h1>inline {{template}} definition</h1><iframe class="embedding-if" ng-src="{{href}}"></iframe>',
-    //         });
-    //         urlRouterProvider.otherwise('/app/home/');
-    //     }
-    // ]);
-
     // 调试日志
     app.log = function(message, type) {
         type = type || 'debug';
         console[type](message);
     };
+
+    // config the application.
+    config(app);
 
     app.log('[app] angular.module("app")');
     return app;

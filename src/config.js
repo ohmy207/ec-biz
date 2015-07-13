@@ -7,10 +7,9 @@ require.config({
 
     baseUrl: 'src/',
 
-    // alias libraries paths
     paths: {
         // 基础框架配置
-        'jquery': 'vendor/jquery/jquery',
+        'jquery': 'vendor/jquery/dist/jquery',
         'angular': 'vendor/angular/angular',
         'bootstrap': 'vendor/bootstrap/dist/js/bootstrap',
 
@@ -49,6 +48,10 @@ require.config({
 
     // angular does not support AMD out of the box, put it in a shim
     shim: {
+        'jquery': {
+            exports: 'jquery'
+        },
+
         'angular': {
             exports: 'angular',
             deps: ['jquery']
@@ -61,5 +64,5 @@ require.config({
         // kick start application... see startup.js
         'js/startup'
     ],
-    urlArgs: "version=" + Math.random()
+    urlArgs: "v=" + (+new Date)
 });

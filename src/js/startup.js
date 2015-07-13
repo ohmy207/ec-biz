@@ -1,12 +1,5 @@
 'use strict';
 
-// 【启动流程】
-
-// 1. 定义控制器
-// 2. 定义App
-// 3. 定义路由规则
-// 4. bootstrap启动
-
 /**
  * bootstraps angular onto the window.document node
  * NOTE: the ng-app attribute should not be on the index.html when using ng.bootstrap
@@ -26,9 +19,9 @@
 define([
     'require',
     'angular',
-    './app',
-    './config/router'
+    './app'
 ], function(require, angular, app) {
+    
     /*
      * place operations that need to initialize prior to app start here
      * using the `run` function on the top-level module
@@ -45,7 +38,7 @@ define([
             'angular-websocket'
         ],
         function(document, page) {
-            angular.bootstrap(document, ['app']);
             app.log('[startup] angular.bootstrap()');
+            angular.bootstrap(document, ['app']);
         });
 });

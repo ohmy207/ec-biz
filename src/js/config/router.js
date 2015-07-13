@@ -6,8 +6,15 @@
  * date:    {{date}}
  */
 'use strict';
+define(['angular'], function(angular) {
+    
+});
+
+
+
 define(['angular', '../app'], function(angular, app) {
 
+    console.log(app);
     // 注入路由对象
     app.run(
         ['$rootScope', '$state', '$stateParams',
@@ -23,9 +30,8 @@ define(['angular', '../app'], function(angular, app) {
         ]
     );
 
-    return;
     // 配置路由规则
-    e.config(
+    app.config(
         ['$stateProvider', '$urlRouterProvider',
             function(stateProvider, urlRouterProvider) {
                 stateProvider.decorator('views', function(state, parent) {
@@ -74,7 +80,7 @@ define(['angular', '../app'], function(angular, app) {
                         }
                     }
                 });
-                urlRouterProvider.otherwise('/app/home');
+                // urlRouterProvider.otherwise('/app/home');
             }
         ]);
 });

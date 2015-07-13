@@ -52,7 +52,6 @@
         return result;
     }
 
-
     if (typeof require == "function" && typeof module == "object" && typeof module.exports == "object") {
         // [1] CommonJS/Node.js
         module.exports = exports;

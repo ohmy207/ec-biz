@@ -8,6 +8,7 @@
 .idea
 .svn
 .git
+.DS_Store
 src/vendor/
 dep/
 node_modules/

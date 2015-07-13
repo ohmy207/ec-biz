@@ -8,7 +8,6 @@
 'use strict';
 
 define(['angular', 'modules/context'], function(angular, context) {
-    console.log(context);
     app.log('[app] angular.module("app")');
     return app;
 });

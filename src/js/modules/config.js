@@ -9,9 +9,9 @@
 
 define(['require', 'angular'], function(require, angular) {
 
-    require([
-        './home/home-controller'
-    ]);
-
-    console.log('[config.js] angular.module()');
+    return function(app) {
+        
+        
+        app.log('[app] angular.router("app")');
+    };
 });

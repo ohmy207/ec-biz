@@ -10,8 +10,6 @@
 // global router config
 define(['require', 'angular'], function(require, angular) {
 
-    var available = 1;
-
     // router map list
     var routerMap = {
         'app': {
@@ -30,21 +28,34 @@ define(['require', 'angular'], function(require, angular) {
         },
 
         'app.external': {
-            url: "/external/{href:.*}",
+            url: "/external/{url:.*}",
             views: {
                 'screen': {
                     controller: function($scope, $state, $stateParams) {
-                        if (!$state.params.href) {
-                            var argv = {
-                                href: 'http://www.baidu.com/'
-                            };
-                            // 跳转函数
-
-                            $state.go('app.external', argv);
+                        if (!$state.params.url) {
+                            $state.go('app.external', {
+                                url: 'http://www.baidu.com/'
+                            });
                             return;
                         }
-                        console.log($stateParams)
-                        // $scope.href = decodeURIComponent($state.params.href);
+                        $scope.url = $stateParams.url;
+                    }
+                }
+            }
+        },
+        'app.about': {
+            url: "/about/:wd",
+            views: {
+                'screen': {
+                    templateUrl: '/src/page/app/about.html',
+                    controller: function($scope, $state, $stateParams, $http) {
+                        $scope.now = new Date;
+                        $scope.timer = setInterval(function() {
+                            $scope.now = new Date;
+
+                            // 手动触发渲染
+                            $scope.$apply();
+                        }, 1000);
                     }
                 }
             }
@@ -54,24 +65,22 @@ define(['require', 'angular'], function(require, angular) {
     // return a method.
     return function(app, autoIndex) {
 
-        if (available) {
-            app.config(['$stateProvider', '$urlRouterProvider',
-                function(stateProvider, urlRouterProvider) {
-                    stateProvider.decorator('views', decoratorView);
+        app.config(['$stateProvider', '$urlRouterProvider',
+            function(stateProvider, urlRouterProvider) {
+                stateProvider.decorator('views', decoratorView);
 
-                    for (var state in routerMap) {
-                        stateProvider.state(state, routerMap[state])
-                    }
-                    // has default index page.
-                    autoIndex && urlRouterProvider.otherwise(autoIndex);
-
+                for (var state in routerMap) {
+                    stateProvider.state(state, routerMap[state])
                 }
-            ]);
 
-            app.run(['$rootScope', '$state', '$stateParams', runMethod]);
-        }
+                // has default index page.
+                if (autoIndex) {
+                    urlRouterProvider.otherwise('/app/home');
+                }
+            }
+        ]);
 
-        available = 0;
+        app.run(['$rootScope', '$state', '$stateParams', runMethod]);
     };
 
     function runMethod(rootScope, state, stateParams) {
@@ -85,7 +94,7 @@ define(['require', 'angular'], function(require, angular) {
 
         angular.forEach(views, function(config, name) {
             var statePath = (state.name).replace('.', '/');
-            if (!config.templateUrl) {
+            if (!config.template && !config.templateUrl && !config.templateProvider) {
                 config.templateUrl = '/src/page/' + statePath + '.html';
             }
             result[name] = config;

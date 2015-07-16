@@ -38,7 +38,6 @@ require.config({
 
             //Valid values are 'node', 'xhr', or 'rhino'
             env: 'xhr',
-
             onXhrComplete: function(xhr, url) {
                 //Called whenever an XHR has completed its work. Useful
                 //if browser-specific xhr cleanup needs to be done.
@@ -48,19 +47,41 @@ require.config({
 
     // angular does not support AMD out of the box, put it in a shim
     shim: {
+        'angular': {
+            exports: 'angular'
+        },
+        'angular-animate': {
+            deps: ['angular']
+        },
+        'angular-resource': {
+            deps: ['angular']
+        },
+        'angular-route': {
+            deps: ['angular']
+        },
+        'angular-ui-utils': {
+            deps: ['angular']
+        },
+        'angular-sanitize': {
+            deps: ['angular']
+        },
+        'bootstrap': {
+            deps: ['jquery']
+        },
         'jquery': {
             exports: 'jquery'
         },
-
-        'angular': {
-            exports: 'angular',
-            deps: ['jquery']
+        'ui-bootstrap': {
+            deps: ['angular', 'bootstrap']
         }
     },
 
+    priority: ['angular', 'jquery'],
+
     deps: [
         // kick start application... see startup.js
-        'js/startup'
+        'js/startup',
+        'bootstrap'
     ],
     urlArgs: "v=" + (+new Date)
 });

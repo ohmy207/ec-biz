@@ -7,11 +7,22 @@
  */
 'use strict';
 
-define(['require', 'angular'], function(require, angular) {
+// Program configuration entry
+define(
+	[
+		'require',
+		'angular',
+		'../app',
+		'../config/router'
+	], function(require, angular, app, router) {
 
-    return function(app) {
-        
-        
-        app.log('[app] angular.router("app")');
-    };
-});
+
+		app.config(['$sceDelegateProvider',
+			function(sceDelegateProvider) {
+				sceDelegateProvider.resourceUrlWhitelist(
+					['self', 'http://**', 'https://**']
+				);
+			}
+		]);
+		router(app, '/app/home');
+	});

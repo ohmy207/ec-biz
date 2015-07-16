@@ -7,7 +7,7 @@
  */
 'use strict';
 
-define(['angular', 'modules/config'], function(angular, config) {
+define(['angular'], function(angular) {
 
     // * loads sub modules and wraps them up into the `app` module
     // * this should be used for top-level module definitions only
@@ -22,6 +22,7 @@ define(['angular', 'modules/config'], function(angular, config) {
         'ui.utils',
 
         'ngAnimate',
+        // 'ngMock',
         'ngSanitize',
         'ngResource',
         'ngWebSocket'
@@ -32,9 +33,6 @@ define(['angular', 'modules/config'], function(angular, config) {
         type = type || 'debug';
         console[type](message);
     };
-
-    // config the application.
-    config(app);
 
     app.log('[app] angular.module("app")');
     return app;

@@ -26,10 +26,11 @@ require.config({
         'ready': 'vendor/requirejs-domready/domReady',
         'text': 'vendor/requirejs-text/text',
 
-        // 业务模块配置
-        'config': 'js/config',
-        'modules': 'js/modules',
-        'components': 'js/components'
+        // // 业务模块配置
+        // 'app': 'js/app',
+        // 'config': 'js/config',
+        // 'modules': 'js/modules',
+        // 'components': 'js/components'
     },
 
     config: {

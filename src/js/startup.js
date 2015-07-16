@@ -19,8 +19,13 @@
 define([
     'require',
     'angular',
-    './app'
-], function(require, angular, app) {
+    './app',
+    './modules/config'
+], function(require, angular, app, config) {
+    
+    if(typeof config == 'function') {
+        config(app);
+    }
     
     /*
      * place operations that need to initialize prior to app start here
@@ -35,8 +40,10 @@ define([
             'angular-sanitize',
             'angular-bootstrap',
             'angular-ui-utils',
-            'angular-websocket'
+            'angular-websocket',
+            'angular-mocks'
         ],
+
         function(document, page) {
             app.log('[startup] angular.bootstrap()');
             angular.bootstrap(document, ['app']);

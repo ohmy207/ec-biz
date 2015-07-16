@@ -6,81 +6,90 @@
  * date:    {{date}}
  */
 'use strict';
-define(['angular'], function(angular) {
-    
-});
 
+// global router config
+define(['require', 'angular'], function(require, angular) {
 
+    var available = 1;
 
-define(['angular', '../app'], function(angular, app) {
+    // router map list
+    var routerMap = {
+        'app': {
+            url: "/app",
+            abstract: true,
+            // controller: 'AppCtrl'
+        },
 
-    console.log(app);
-    // 注入路由对象
-    app.run(
-        ['$rootScope', '$state', '$stateParams',
-            function(rootScope, state, stateParams) {
-
-                // It's very handy to add references to $state and $stateParams to the $rootScope
-                // so that you can access them from any scope within your applications.For example,
-                // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
-                // to active whenever 'contacts.list' or one of its decendents is active.
-                rootScope.$state = state;
-                rootScope.$stateParams = stateParams;
+        'app.home': {
+            url: "/home",
+            views: {
+                'screen': {
+                    // controller: 'App.HomeCtrl'
+                }
             }
-        ]
-    );
+        },
 
-    // 配置路由规则
-    app.config(
-        ['$stateProvider', '$urlRouterProvider',
-            function(stateProvider, urlRouterProvider) {
-                stateProvider.decorator('views', function(state, parent) {
-                    var result = {},
-                        views = parent(state);
+        'app.external': {
+            url: "/external/{href:.*}",
+            views: {
+                'screen': {
+                    controller: function($scope, $state, $stateParams) {
+                        if (!$state.params.href) {
+                            var argv = {
+                                href: 'http://www.baidu.com/'
+                            };
+                            // 跳转函数
 
-                    angular.forEach(views, function(config, name) {
-                        var autoName = (state.name).replace('.', '/');
-                        if (!config.templateUrl) {
-                            config.templateUrl = '/src/page/' + autoName + '.html';
+                            $state.go('app.external', argv);
+                            return;
                         }
-                        result[name] = config;
-                    });
-                    return result;
-                })
-
-                .state('app', {
-                    url: "/app",
-                    abstract: true,
-                    controller: 'AppCtrl'
-                })
-
-                .state('app.home', {
-                    url: "/home",
-                    views: {
-                        'screen': {
-                            controller: 'App.HomeCtrl'
-                        }
+                        console.log($stateParams)
+                        // $scope.href = decodeURIComponent($state.params.href);
                     }
-                })
-
-                .state('app.about', {
-                    url: "/about/:wd",
-                    views: {
-                        'screen': {
-                            controller: 'App.AboutCtrl'
-                        }
-                    }
-                })
-
-                .state('app.external', {
-                    url: "/external/{href:.*}",
-                    views: {
-                        'screen': {
-                            controller: 'App.ExternalCtrl'
-                        }
-                    }
-                });
-                // urlRouterProvider.otherwise('/app/home');
+                }
             }
-        ]);
+        }
+    };
+
+    // return a method.
+    return function(app, autoIndex) {
+
+        if (available) {
+            app.config(['$stateProvider', '$urlRouterProvider',
+                function(stateProvider, urlRouterProvider) {
+                    stateProvider.decorator('views', decoratorView);
+
+                    for (var state in routerMap) {
+                        stateProvider.state(state, routerMap[state])
+                    }
+                    // has default index page.
+                    autoIndex && urlRouterProvider.otherwise(autoIndex);
+
+                }
+            ]);
+
+            app.run(['$rootScope', '$state', '$stateParams', runMethod]);
+        }
+
+        available = 0;
+    };
+
+    function runMethod(rootScope, state, stateParams) {
+        rootScope.$state = state;
+        rootScope.$stateParams = stateParams;
+    }
+
+    function decoratorView(state, parent) {
+        var result = {},
+            views = parent(state);
+
+        angular.forEach(views, function(config, name) {
+            var statePath = (state.name).replace('.', '/');
+            if (!config.templateUrl) {
+                config.templateUrl = '/src/page/' + statePath + '.html';
+            }
+            result[name] = config;
+        });
+        return result;
+    }
 });

@@ -21,7 +21,7 @@ define(['require', 'angular'], function(require, angular) {
         'app.home': {
             url: "/home",
             views: {
-                'screen': {
+                'main': {
                     // controller: 'App.HomeCtrl'
                 }
             }
@@ -30,7 +30,7 @@ define(['require', 'angular'], function(require, angular) {
         'app.external': {
             url: "/external/{url:.*}",
             views: {
-                'screen': {
+                'main': {
                     controller: function($scope, $state, $stateParams) {
                         if (!$state.params.url) {
                             $state.go('app.external', {
@@ -46,12 +46,12 @@ define(['require', 'angular'], function(require, angular) {
         'app.about': {
             url: "/about/:wd",
             views: {
-                'screen': {
+                'main': {
                     templateUrl: '/src/page/app/about.html',
                     controller: function($scope, $state, $stateParams, $http) {
-                        $scope.now = new Date;
+                        $scope.now = new Date();
                         $scope.timer = setInterval(function() {
-                            $scope.now = new Date;
+                            $scope.now = new Date();
 
                             // 手动触发渲染
                             $scope.$apply();

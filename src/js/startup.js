@@ -40,8 +40,7 @@ define([
             'angular-sanitize',
             'angular-bootstrap',
             'angular-ui-utils',
-            'angular-websocket',
-            'angular-mocks'
+            'angular-websocket'
         ],
 
         function(document, page) {

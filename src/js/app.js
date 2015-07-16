@@ -22,7 +22,6 @@ define(['angular'], function(angular) {
         'ui.utils',
 
         'ngAnimate',
-        // 'ngMock',
         'ngSanitize',
         'ngResource',
         'ngWebSocket'

@@ -14,9 +14,8 @@ define(
 		'angular',
 		'../app',
 		'../config/router'
-	], function(require, angular, app, router) {
-
-
+	],
+	function(require, angular, app, router) {
 		app.config(['$sceDelegateProvider',
 			function(sceDelegateProvider) {
 				sceDelegateProvider.resourceUrlWhitelist(

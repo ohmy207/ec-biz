@@ -16,7 +16,6 @@ require.config({
         'angular-animate': 'vendor/angular-animate/angular-animate',
         'angular-bootstrap': 'vendor/angular-bootstrap/ui-bootstrap-tpls',
         'angular-resource': 'vendor/angular-resource/angular-resource',
-        'angular-mocks': 'vendor/angular-mocks/angular-mocks',
         'angular-sanitize': 'vendor/angular-sanitize/angular-sanitize',
         'angular-websocket': 'vendor/angular-websocket/angular-websocket',
         'angular-ui-router': 'vendor/angular-ui-router/release/angular-ui-router',

@@ -14,23 +14,20 @@ define(['require', 'angular'], function(require, angular) {
     var routerMap = {
         'app': {
             url: "/app",
-            abstract: true,
-            // controller: 'AppCtrl'
+            abstract: true
         },
 
         'app.home': {
             url: "/home",
             views: {
-                'main': {
-                    // controller: 'App.HomeCtrl'
-                }
+                'screen': {}
             }
         },
 
         'app.external': {
             url: "/external/{url:.*}",
             views: {
-                'main': {
+                'screen': {
                     controller: function($scope, $state, $stateParams) {
                         if (!$state.params.url) {
                             $state.go('app.external', {
@@ -46,14 +43,12 @@ define(['require', 'angular'], function(require, angular) {
         'app.about': {
             url: "/about/:wd",
             views: {
-                'main': {
+                'screen': {
                     templateUrl: '/src/page/app/about.html',
                     controller: function($scope, $state, $stateParams, $http) {
                         $scope.now = new Date();
                         $scope.timer = setInterval(function() {
                             $scope.now = new Date();
-
-                            // 手动触发渲染
                             $scope.$apply();
                         }, 1000);
                     }
@@ -72,8 +67,6 @@ define(['require', 'angular'], function(require, angular) {
                 for (var state in routerMap) {
                     stateProvider.state(state, routerMap[state])
                 }
-
-                // has default index page.
                 if (autoIndex) {
                     urlRouterProvider.otherwise('/app/home');
                 }

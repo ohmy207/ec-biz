@@ -6,22 +6,18 @@
  * date:    {{date}}
  */
 'use strict';
-
-// Program configuration entry
 define(
 	[
 		'require',
 		'angular',
-		'../app',
-		'../config/router'
+
+		'../config/router',
+		'../config/securty'
 	],
-	function(require, angular, app, router) {
-		app.config(['$sceDelegateProvider',
-			function(sceDelegateProvider) {
-				sceDelegateProvider.resourceUrlWhitelist(
-					['self', 'http://**', 'https://**']
-				);
-			}
-		]);
-		router(app, '/app/home');
+	function(require, angular, router, securty) {
+
+		return function(app) {
+			securty(app);
+			router(app, '/app/home');
+		};
 	});

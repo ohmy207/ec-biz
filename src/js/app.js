@@ -12,11 +12,6 @@ define(['angular'], function(angular) {
     // * loads sub modules and wraps them up into the `app` module
     // * this should be used for top-level module definitions only
     var app = angular.module('app', [
-
-        // 'app.service',
-        // 'app.controller',
-        // 'app.directive',
-
         'ui.router',
         'ui.bootstrap',
         'ui.utils',
@@ -27,6 +22,8 @@ define(['angular'], function(angular) {
         'ngWebSocket'
     ]);
 
+    window.A = app;
+
     // 调试日志
     app.log = function(message, type) {
         type = type || 'debug';
@@ -34,5 +31,6 @@ define(['angular'], function(angular) {
     };
 
     app.log('[app] angular.module("app")');
+    
     return app;
 });

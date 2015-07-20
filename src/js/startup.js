@@ -4,28 +4,19 @@
  * bootstraps angular onto the window.document node
  * NOTE: the ng-app attribute should not be on the index.html when using ng.bootstrap
  */
-(function(global) {
-    if (!global.console || !console.info) {
+(function() {
+    if (!window.console || !console.info) {
         var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml',
             'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'
         ];
-        global.console = {};
+        window.console = {};
         for (var i = 0; i < names.length; i++) {
-            global.console[names[i]] = function() {}
+            window.console[names[i]] = function() {};
         }
     }
-})(window);
+})();
 
-define([
-    'require',
-    'angular',
-    './app',
-    './modules/config'
-], function(require, angular, app, config) {
-
-    if (typeof config == 'function') {
-        config(app);
-    }
+define(['require', 'angular', './app', './modules/config'], function(require, angular, app, config) {
 
     /*
      * place operations that need to initialize prior to app start here
@@ -43,8 +34,14 @@ define([
             'angular-websocket'
         ],
 
-        function(document, page) {
+        function(document) {
             app.log('[startup] angular.bootstrap()');
+
+            if (typeof config == 'function') {
+                config(app, {});
+            }
+
             angular.bootstrap(document, ['app']);
+            angular.element('.loading-container').fadeOut();
         });
 });

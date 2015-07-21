@@ -40,17 +40,24 @@ define(['require', 'angular'], function(require, angular) {
                 }
             }
         },
+
         'app.about': {
             url: "/about/:wd",
             views: {
                 'screen': {
-                    templateUrl: '/src/page/app/about.html',
                     controller: function($scope, $state, $stateParams, $http) {
                         $scope.now = new Date();
-                        $scope.timer = setInterval(function() {
+                        var timer = setInterval(function() {
                             $scope.now = new Date();
                             $scope.$apply();
                         }, 1000);
+
+                        $scope.$on(
+                            "$destroy",
+                            function(event) {
+                                clearInterval(timer);
+                            }
+                        );
                     }
                 }
             }
@@ -72,7 +79,6 @@ define(['require', 'angular'], function(require, angular) {
                 }
             }
         ]);
-
         app.run(['$rootScope', '$state', '$stateParams', runMethod]);
     };
 
@@ -86,12 +92,13 @@ define(['require', 'angular'], function(require, angular) {
             views = parent(state);
 
         angular.forEach(views, function(config, name) {
-            var statePath = (state.name).replace('.', '/');
             if (!config.template && !config.templateUrl && !config.templateProvider) {
+                var statePath = state.name.replace('.', '/');
                 config.templateUrl = '/src/page/' + statePath + '.html';
             }
             result[name] = config;
         });
+
         return result;
     }
 });

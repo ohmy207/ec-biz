@@ -21,16 +21,8 @@ define(['angular'], function(angular) {
         'ngResource',
         'ngWebSocket'
     ]);
+    console.log('[app] angular.module("app")');
 
     window.A = app;
-
-    // 调试日志
-    app.log = function(message, type) {
-        type = type || 'debug';
-        console[type](message);
-    };
-
-    app.log('[app] angular.module("app")');
-    
     return app;
 });

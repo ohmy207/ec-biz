@@ -1,7 +1,7 @@
 /*
  * Copyright 2014 Baidu Inc. All rights reserved.
  *
- * file:    config.js
+ * file:    start.js
  * author:  mycoin (nqliujiangtao@gmail.com)
  * date:    {{date}}
  */

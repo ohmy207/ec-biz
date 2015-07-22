@@ -16,7 +16,7 @@
     }
 })();
 
-define(['require', 'angular', './app', './modules/config'], function(require, angular, app, config) {
+define(['require', 'angular', './app', './modules/start'], function(require, angular, app, start) {
 
     /*
      * place operations that need to initialize prior to app start here
@@ -35,10 +35,10 @@ define(['require', 'angular', './app', './modules/config'], function(require, an
         ],
 
         function(document) {
-            app.log('[startup] angular.bootstrap()');
+            console.log('[startup] angular.bootstrap()');
 
-            if (typeof config == 'function') {
-                config(app, {});
+            if (typeof start == 'function') {
+                start(app, {});
             }
 
             angular.bootstrap(document, ['app']);

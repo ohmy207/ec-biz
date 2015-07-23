@@ -20,7 +20,15 @@ define(['require', 'angular'], function(require, angular) {
         'app.home': {
             url: "/home",
             views: {
-                'screen': {}
+                'screen': {
+                    templateProvider: function() {
+                        var def = jQuery.Deferred();
+                        setTimeout(function() {
+                            def.resolve('wefefce')
+                        }, 1000);
+                        return def;
+                    },
+                }
             }
         },
 
@@ -31,7 +39,7 @@ define(['require', 'angular'], function(require, angular) {
                     controller: function($scope, $state, $stateParams) {
                         if (!$state.params.url) {
                             $state.go('app.external', {
-                                url: 'http://www.baidu.com/'
+                                url: 'https://www.baidu.com/'
                             });
                             return;
                         }
@@ -74,9 +82,8 @@ define(['require', 'angular'], function(require, angular) {
                 for (var state in routerMap) {
                     stateProvider.state(state, routerMap[state])
                 }
-                if (autoIndex) {
-                    urlRouterProvider.otherwise('/app/home');
-                }
+
+                urlRouterProvider.otherwise('/app/home');
             }
         ]);
         app.run(['$rootScope', '$state', '$stateParams', runMethod]);
@@ -94,7 +101,7 @@ define(['require', 'angular'], function(require, angular) {
         angular.forEach(views, function(config, name) {
             if (!config.template && !config.templateUrl && !config.templateProvider) {
                 var statePath = state.name.replace('.', '/');
-                config.templateUrl = '/src/page/' + statePath + '.html';
+                config.templateUrl = 'src/page/' + statePath + '.html';
             }
             result[name] = config;
         });

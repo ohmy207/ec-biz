@@ -9,7 +9,7 @@
 
 // global router config
 define(['require', 'angular'], function(require, angular) {
-    return function() {
+	return function() {
 
-    };
+	};
 });

@@ -1,0 +1,120 @@
+.list-style-none() {
+  list-style-type: none;
+  padding: 0;
+  ul,
+  li,
+  ol,
+  dl,
+  dt,
+  dd {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.dl-inline-table() {
+  display: table;
+  dt,
+  dd {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.dl-aligned-left() {
+  dt,
+  dd {
+    margin: 0;
+  }
+}
+
+.dl-aligned-left() {
+  dt,
+  dd {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.dl-centered() {
+  dt,
+  dd {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+// inline-block
+.inline-block() {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+// 行内列表
+.inline-list(@item-width, @margin-right: 0) {
+  .clear();
+  display: block;
+  li {
+    float: left;
+    width: @item-width;
+    margin-right: @margin-right;
+
+    .inline-block();
+
+    &.item-last {
+      margin-right: 0;
+    }
+  }
+}
+
+// 非常有用，用于不破坏父节点而实现相对定位
+.reset-position(@z-index: 0) {
+  position: relative;
+  overflow: visible;
+  
+  z-index: @z-index;
+  .inline-block();
+  .size(0);
+}
+
+
+// 隐藏不可见
+.hidden() {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable:active,
+  &.focusable:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+  }
+}
+
+
+// 自动换行
+.force-wrap() {
+    white-space: pre;           // CSS 2.0
+    white-space: pre-wrap;      // CSS 2.1
+    white-space: pre-line;      // CSS 3.0
+    white-space: -pre-wrap;     // Opera 4-6
+    white-space: -o-pre-wrap;   // Opera 7
+    white-space: -moz-pre-wrap; // Mozilla
+    white-space: -hp-pre-wrap;  // HP Printers
+      word-wrap: break-word;      // IE 5+
+}

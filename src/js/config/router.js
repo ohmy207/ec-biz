@@ -21,13 +21,13 @@ define(['require', 'angular'], function(require, angular) {
             url: "/home",
             views: {
                 'screen': {
-                    templateProvider: function() {
-                        var def = jQuery.Deferred();
-                        setTimeout(function() {
-                            def.resolve('wefefce')
-                        }, 1000);
-                        return def;
-                    },
+                    // templateProvider: function() {
+                    //     var def = jQuery.Deferred();
+                    //     setTimeout(function() {
+                    //         def.resolve('wefefce')
+                    //     }, 1000);
+                    //     return def;
+                    // },
                 }
             }
         },
@@ -73,39 +73,37 @@ define(['require', 'angular'], function(require, angular) {
     };
 
     // return a method.
-    return function(app, autoIndex) {
-
+    return function(app) {
         app.config(['$stateProvider', '$urlRouterProvider',
             function(stateProvider, urlRouterProvider) {
-                stateProvider.decorator('views', decoratorView);
+                stateProvider.decorator('views', function(state, parent) {
+                    var result = {},
+                        views = parent(state);
+
+                    angular.forEach(views, function(config, name) {
+                        if (!config.template && !config.templateUrl && !config.templateProvider) {
+                            var statePath = state.name.replace('.', '/');
+                            config.templateUrl = 'src/page/' + statePath + '.html';
+                        }
+                        result[name] = config;
+                    });
+                    return result;
+                });
 
                 for (var state in routerMap) {
                     stateProvider.state(state, routerMap[state])
                 }
-
                 urlRouterProvider.otherwise('/app/home');
             }
-        ]);
-        app.run(['$rootScope', '$state', '$stateParams', runMethod]);
-    };
+        ])
 
-    function runMethod(rootScope, state, stateParams) {
-        rootScope.$state = state;
-        rootScope.$stateParams = stateParams;
-    }
+        .run(['$rootScope', '$state', '$stateParams', '$templateCache',
+            function(rootScope, state, stateParams, templateCache) {
+                rootScope.$state = state;
+                rootScope.$stateParams = stateParams;
 
-    function decoratorView(state, parent) {
-        var result = {},
-            views = parent(state);
-
-        angular.forEach(views, function(config, name) {
-            if (!config.template && !config.templateUrl && !config.templateProvider) {
-                var statePath = state.name.replace('.', '/');
-                config.templateUrl = 'src/page/' + statePath + '.html';
+                templateCache.put('header.html', '2345678765432')
             }
-            result[name] = config;
-        });
-
-        return result;
-    }
+        ]);
+    };
 });

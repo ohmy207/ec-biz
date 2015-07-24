@@ -1,0 +1,49 @@
+.animation(...) {
+  -webkit-animation: @arguments;
+     -moz-animation: @arguments;
+      -ms-animation: @arguments;
+       -o-animation: @arguments;
+          animation: @arguments;
+}
+
+.fade-in-out () {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+      filter: blur(100px);
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+
+.fade-out () {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+
+.slide-up () {
+    0% {
+      opacity: 1;
+    }
+
+    99% {
+      opacity: 1;
+      top: 0%;
+    }
+
+    100% {
+      opacity: 0;
+      top: 0%;
+    }
+}
+

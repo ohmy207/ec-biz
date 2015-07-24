@@ -1,0 +1,31 @@
+//
+// .hover-link
+//
+// .hover-link(#000, red);  hover 变色
+// .hover-link(red);        hover 加下划线
+
+.hover-link(@color, @hover-color: _) {
+    color: @color;
+    text-decoration: none;
+    &:hover {
+        .output() when not (@hover-color = _) {
+            color: @hover-color;
+        }
+        .output() when (@hover-color = _) {
+            text-decoration: underline;
+        }
+        .output();
+        cursor: pointer;
+    }
+}
+
+//
+// .unstyled-link
+//
+// 将链接变成默认的文字样式
+.unstyled-link(@color: inherit) {
+    .hover-link(@color, @color);
+    &:active, &:focus {
+        outline: none;
+    }
+}

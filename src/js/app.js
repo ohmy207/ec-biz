@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Baidu Inc. All rights reserved.
+ * Copyright 2014 Alibaba Group, Inc. All rights reserved.
  *
  * file:    app.js
  * author:  mycoin (nqliujiangtao@gmail.com)
@@ -8,6 +8,9 @@
 'use strict';
 
 define(['angular'], function(angular) {
+
+    var main = angular.module('appMain', []);
+
 
     // * loads sub modules and wraps them up into the `app` module
     // * this should be used for top-level module definitions only
@@ -19,9 +22,24 @@ define(['angular'], function(angular) {
         'ngAnimate',
         'ngSanitize',
         'ngResource',
-        'ngWebSocket'
+        'ngWebSocket',
+
+        'appMain'
     ]);
     console.log('[app] angular.module("app")');
+
+    app.controller('bootController', ['$rootScope', '$scope', function(rootScope, scope) {
+
+    }]);
+
+    app.directive('hello', function() {
+        return {
+            restrict: 'E',
+            template: '<div>Hi there</div>',
+            replace: true
+        };
+    });
+
 
     window.A = app;
     return app;

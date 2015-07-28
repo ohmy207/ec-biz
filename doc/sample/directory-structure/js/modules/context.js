@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Baidu Inc. All rights reserved.
+ * Copyright 2014 Alibaba Group, Inc. All rights reserved.
  *
  * file:    index.js
  * author:  mycoin (nqliujiangtao@gmail.com)

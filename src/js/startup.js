@@ -16,15 +16,13 @@
     }
 })();
 
-define(['require', 'angular', './app', './modules/start'], function(require, angular, app, start) {
+define(['require', 'angular', './app', './modules/config'], function(require, angular, app, config) {
 
     /*
      * place operations that need to initialize prior to app start here
      * using the `run` function on the top-level module
      */
     require([
-            'ready!',
-
             'angular-animate',
             'angular-resource',
             'angular-ui-router',
@@ -34,14 +32,18 @@ define(['require', 'angular', './app', './modules/start'], function(require, ang
             'angular-websocket'
         ],
 
-        function(document) {
+        function() {
             console.log('[startup] angular.bootstrap()');
 
-            if (typeof start == 'function') {
-                start(app, {});
+            if (typeof config == 'function') {
+                config(app, {});
+            } else {
+                throw '[error] config';
             }
 
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
+
+            console.log(new Date() - GLOBAL_BOOTTIME);
         });
 });

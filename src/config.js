@@ -1,8 +1,12 @@
-/**
- * configure RequireJS
- * prefer named modules to long paths, especially for version mgt
- * or 3rd party libraries
+/*
+ * Copyright 2014 Alibaba Group, Inc. All rights reserved.
+ *
+ * file:    app.js
+ * author:  mycoin (nqliujiangtao@gmail.com)
+ * date:    {{date}}
  */
+'use strict';
+
 require.config({
 
     baseUrl: 'src/',
@@ -26,10 +30,10 @@ require.config({
         'text': 'vendor/requirejs-text/text',
 
         // // 业务模块配置
-        // 'app': 'js/app',
-        // 'config': 'js/config',
-        // 'modules': 'js/modules',
-        // 'components': 'js/components'
+        'app': 'js/app',
+        'config': 'js/config',
+        'modules': 'js/modules',
+        'components': 'js/components'
     },
 
     config: {
@@ -82,5 +86,5 @@ require.config({
         'js/startup',
         'bootstrap'
     ],
-    urlArgs: "v=" + (+new Date)
+    urlArgs: 'v' + (+new Date())
 });

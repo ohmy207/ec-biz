@@ -10,13 +10,13 @@
 // global router config
 define(['require', 'angular'], function(require, angular) {
 
-    return function(app) {
-        app.config(['$sceDelegateProvider',
-            function(sceDelegateProvider) {
-                sceDelegateProvider.resourceUrlWhitelist(
-                    ['self', 'http://**', 'https://**']
-                );
-            }
-        ]);
-    };
+	return function(app) {
+		app.config(['$sceDelegateProvider',
+			function(sceDelegateProvider) {
+				sceDelegateProvider.resourceUrlWhitelist(
+					['self', 'http://**', 'https://**', 'ws://**', 'wss://**']
+				);
+			}
+		]);
+	};
 });

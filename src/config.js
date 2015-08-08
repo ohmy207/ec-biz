@@ -79,12 +79,10 @@ require.config({
         }
     },
 
-    priority: ['angular', 'jquery'],
-
     deps: [
+        'jquery',
         // kick start application... see startup.js
-        'js/startup',
-        'bootstrap'
+        'js/startup'
     ],
-    urlArgs: 'v' + (+new Date())
+    urlArgs: 'v=' + (+new Date())
 });

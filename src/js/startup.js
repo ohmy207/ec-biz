@@ -44,6 +44,6 @@ define(['require', 'angular', './app', './modules/config'], function(require, an
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
 
-            console.log(new Date() - GLOBAL_BOOTTIME);
+            console.log(new Date() - GLOBAL_STARTTIME);
         });
 });

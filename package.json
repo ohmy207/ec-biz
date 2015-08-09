@@ -1,34 +1,19 @@
 {
-  "name": "sc-biz",
-  "version": "0.0.1",
-  "description": "service center biz.",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server --npm"
-  },
+  "name": "ec-biz",
+  "version": "0.1.0",
+  "description": "广告投放系统",
+  "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mycoin/ec-biz.git"
+    "url": "https://github.com/mycoin/ec-biz"
   },
-  "keywords": [
-    "biz"
-  ],
-  "author": "nqliujiangtao@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mycoin/ec-biz/issues"
-  },
-  "homepage": "https://github.com/mycoin/ec-biz",
+  "license": "MIT License",
   "dependencies": {
-    "coffee-middleware": "~0.3.0",
-    "express": "^4.1.1",
-    "follow-redirects": "0.0.3",
-    "less-middleware": "^0.2.1-beta",
-    "morgan": "^1.5.1",
-    "serve-index": "^1.6.1"
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "less": "^2.5.1",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1"
   }
 }

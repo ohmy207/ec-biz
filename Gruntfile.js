@@ -21,10 +21,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     base: '.',
-                    middleware: function(connect, options, middleware) {
-                        middleware.unshift(lessMiddleware);
-                        return middleware;
-                    }
+                    middleware: require('./lib/middleware')
                 }
             }
         },
@@ -44,25 +41,16 @@ module.exports = function(grunt) {
         }
     });
 
-    function lessMiddleware(request, response, next) {
-        var file = '.' + request._parsedUrl.pathname;
-        if (request.url.indexOf('.css') > 0 && !grunt.file.exists(file)) {
+    grunt.registerTask('server', ['connect:server', 'watch']);
+    grunt.registerTask('default', function() {
+        grunt.log.subhead('Please use one of the following commands:');
 
-            var src = file.replace('.css', '.less');
-            var opt = {
-                filename: src,
-                compress: true
-            };
-            require('less').render(grunt.file.read(src), opt, function(e, output) {
-                response.end(output.css);
-            });
-            return;
-        }
-        next();
-    }
+        grunt.log.writeln('• grunt server  启动静态服务器.');
+        grunt.log.writeln('• grunt watch   监视源并自动编译.');
+        grunt.log.writeln('• grunt build   基础编译.');
+        grunt.log.writeln('• grunt release 压缩构建并打包.');
 
-    grunt.registerTask('serve', [
-        'connect:server',
-        'watch'
-    ]);
+        grunt.log.writeln('\n\nsee all tasks `grunt --verbose`');
+    });
+
 };

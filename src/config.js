@@ -29,7 +29,7 @@ require.config({
         'ready': 'vendor/requirejs-domready/domReady',
         'text': 'vendor/requirejs-text/text',
 
-        // // 业务模块配置
+        // 业务模块配置
         'app': 'js/app',
         'config': 'js/config',
         'modules': 'js/modules',
@@ -53,36 +53,22 @@ require.config({
         'angular': {
             exports: 'angular'
         },
-        'angular-animate': {
-            deps: ['angular']
-        },
-        'angular-resource': {
-            deps: ['angular']
-        },
-        'angular-route': {
-            deps: ['angular']
-        },
-        'angular-ui-utils': {
-            deps: ['angular']
-        },
-        'angular-sanitize': {
-            deps: ['angular']
-        },
-        'bootstrap': {
-            deps: ['jquery']
-        },
         'jquery': {
             exports: 'jquery'
         },
-        'ui-bootstrap': {
+        'angular-bootstrap': {
             deps: ['angular', 'bootstrap']
         }
     },
 
     deps: [
         'jquery',
+
         // kick start application... see startup.js
         'js/startup'
     ],
     urlArgs: 'v=' + (+new Date())
 });
+
+
+

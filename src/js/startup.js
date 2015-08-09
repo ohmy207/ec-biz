@@ -5,18 +5,20 @@
  * NOTE: the ng-app attribute should not be on the index.html when using ng.bootstrap
  */
 (function() {
-    if (!window.console || !console.info) {
+    if (!window.console) {
         var names = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml',
             'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'
         ];
         window.console = {};
         for (var i = 0; i < names.length; i++) {
-            window.console[names[i]] = function() {};
+            window.console[names[i]] = function() {
+                // noop
+            };
         }
     }
 })();
 
-define(['require', 'angular', './app', './modules/config'], function(require, angular, app, config) {
+define(['require', 'angular', 'app', './modules/config'], function(require, angular, app, config) {
 
     /*
      * place operations that need to initialize prior to app start here
@@ -24,26 +26,23 @@ define(['require', 'angular', './app', './modules/config'], function(require, an
      */
     require([
             'angular-animate',
-            'angular-resource',
-            'angular-ui-router',
-            'angular-sanitize',
             'angular-bootstrap',
-            'angular-ui-utils',
-            'angular-websocket'
+            'angular-resource',
+            'angular-sanitize',
+            'angular-websocket',
+            'angular-ui-router',
+            'angular-ui-utils'
         ],
-
         function() {
-            console.log('[startup] angular.bootstrap()');
+            console.debug('[startup] angular.bootstrap()');
 
             if (typeof config == 'function') {
-                config(app, {});
-            } else {
-                throw '[error] config';
+                config(app);
             }
 
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
 
-            console.log(new Date() - GLOBAL_STARTTIME);
+            console.debug(new Date() - GLOBAL_STARTTIME);
         });
 });

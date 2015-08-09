@@ -36,8 +36,6 @@ define(['angular'], function(angular) {
         'ngAnimate',
         'ngSanitize',
         'ngResource',
-        'ngWebSocket',
-
-        // 'appMain'
+        'ngWebSocket'
     ]);;
 });

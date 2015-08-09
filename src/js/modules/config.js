@@ -11,13 +11,13 @@ define(
 		'require',
 		'angular',
 
+		'app',
+
 		'../config/router',
 		'../config/securty'
 	],
-	function(require, angular, router, securty) {
+	function(require, angular, app, router, securty) {
 
-		return function(app) {
-			securty(app);
-			router(app, '/app/home');
-		};
+		securty(app);
+		router(app, '/app/home');
 	});

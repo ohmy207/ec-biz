@@ -39,7 +39,7 @@ define(['require', 'angular'], function(require, angular) {
                     controller: function($scope, $state, $stateParams) {
                         if (!$state.params.url) {
                             $state.go('app.external', {
-                                url: 'https://www.baidu.com/'
+                                url: 'https://www.tmall.com/'
                             });
                             return;
                         }

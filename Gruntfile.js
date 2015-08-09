@@ -41,14 +41,12 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('server', ['connect:server', 'watch']);
+    grunt.registerTask('install', ['bowerBundle:install']);
     grunt.registerTask('default', function() {
         grunt.log.subhead('Please use one of the following commands:');
 
         grunt.log.writeln('• grunt server  启动静态服务器.');
-        grunt.log.writeln('• grunt watch   监视源并自动编译.');
         grunt.log.writeln('• grunt build   基础编译.');
-        grunt.log.writeln('• grunt release 压缩构建并打包.');
 
         grunt.log.writeln('\n\nsee all tasks `grunt --verbose`');
     });

@@ -51,13 +51,16 @@ require.config({
     // angular does not support AMD out of the box, put it in a shim
     shim: {
         'angular': {
-            exports: 'angular'
+            exports: 'angular',
+            deps: [
+                'jquery'
+            ]
         },
         'jquery': {
             exports: 'jquery'
         },
         'angular-bootstrap': {
-            deps: ['angular', 'bootstrap']
+            deps: ['jquery', 'angular', 'bootstrap']
         }
     },
 
@@ -69,6 +72,3 @@ require.config({
     ],
     urlArgs: 'v=' + (+new Date())
 });
-
-
-

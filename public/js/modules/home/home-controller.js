@@ -7,7 +7,16 @@
  */
 'use strict';
 
-define(['angular', 'modules/context'], function(angular, context) {
-    app.log('[app] angular.module("app")');
-    return app;
+define(['angular', 'app'], function(angular, app) {
+	app.config(function($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('app.logout', {
+				url: "/logout",
+				views: {
+					screen: {
+						templateUrl: "public/page/app/logout.html"
+					}
+				}
+			});
+	});
 });

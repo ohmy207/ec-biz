@@ -20,4 +20,8 @@ define(
 
 		securty(app);
 		router(app, '/app/home');
+
+		require([
+			'./home/home-controller'
+		]);
 	});

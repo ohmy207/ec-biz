@@ -35,13 +35,13 @@ module.exports = function(grunt) {
 
                 files: [
                     '*.html',
-                    'src/**/*.{js,css,less,html}'
+                    'public/**/*.{js,css,less,html}'
                 ]
             }
         }
     });
 
-    grunt.registerTask('install', ['bowerBundle:install']);
+    grunt.registerTask('server', ['connect:server', 'watch']);
     grunt.registerTask('default', function() {
         grunt.log.subhead('Please use one of the following commands:');
 

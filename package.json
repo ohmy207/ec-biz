@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/mycoin/ec-biz"
   },
+  "script": {
+    "postinstall": "bower install"
+  },
   "license": "MIT License",
   "dependencies": {
     "grunt": "^0.4.5",

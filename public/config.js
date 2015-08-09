@@ -9,7 +9,7 @@
 
 require.config({
 
-    baseUrl: 'src/',
+    baseUrl: 'public/',
 
     paths: {
         // 基础框架配置

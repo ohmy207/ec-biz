@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright 2014 Alibaba Group, Inc. All rights reserved.
  *
  * file:    router.js
@@ -13,12 +13,12 @@ define(['require', 'angular'], function(require, angular) {
     // router map list
     var routerMap = {
         'app': {
-            url: "/app",
+            url: '/app',
             abstract: true
         },
 
         'app.home': {
-            url: "/home",
+            url: '/home',
             views: {
                 'screen': {
                     // templateProvider: function() {
@@ -33,7 +33,7 @@ define(['require', 'angular'], function(require, angular) {
         },
 
         'app.external': {
-            url: "/external/{url:.*}",
+            url: '/external/{url:.*}',
             views: {
                 'screen': {
                     controller: function($scope, $state, $stateParams) {
@@ -50,7 +50,7 @@ define(['require', 'angular'], function(require, angular) {
         },
 
         'app.about': {
-            url: "/about/:wd",
+            url: '/about/:wd',
             views: {
                 'screen': {
                     controller: function($scope, $state, $stateParams, $http) {
@@ -61,7 +61,7 @@ define(['require', 'angular'], function(require, angular) {
                         }, 1000);
 
                         $scope.$on(
-                            "$destroy",
+                            '$destroy',
                             function(event) {
                                 clearInterval(timer);
                             }
@@ -83,7 +83,7 @@ define(['require', 'angular'], function(require, angular) {
                     angular.forEach(views, function(config, name) {
                         if (!config.template && !config.templateUrl && !config.templateProvider) {
                             var statePath = state.name.replace('.', '/');
-                            config.templateUrl = 'src/page/' + statePath + '.html';
+                            config.templateUrl = 'public/page/' + statePath + '.html';
                         }
                         result[name] = config;
                     });
@@ -91,7 +91,7 @@ define(['require', 'angular'], function(require, angular) {
                 });
 
                 for (var state in routerMap) {
-                    stateProvider.state(state, routerMap[state])
+                    stateProvider.state(state, routerMap[state]);
                 }
                 urlRouterProvider.otherwise('/app/home');
             }
@@ -102,8 +102,9 @@ define(['require', 'angular'], function(require, angular) {
                 rootScope.$state = state;
                 rootScope.$stateParams = stateParams;
 
-                templateCache.put('header.html', '2345678765432')
+                templateCache.put('header.html', '2345678765432');
             }
         ]);
+
     };
 });

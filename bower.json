@@ -4,7 +4,7 @@
   "main": "index.html",
   "ignore": [
     "**/.*",
-    "src/vendor"
+    "public/vendor"
   ],
   "dependencies": {
     "angular": "~1.4.2",

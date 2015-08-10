@@ -36,8 +36,14 @@ module.exports = function(grunt) {
 
                 files: [
                     '*.html',
-                    'public/**/*.{js,css,less,html}'
+                    'public/{*,**}/*.{js,css,less,html}'
                 ]
+            },
+            config: {
+                files: ['Gruntfile.js', 'lib/{*,*/}*.js'],
+                options: {
+                    reload: true
+                }
             }
         }
     });

@@ -94,6 +94,8 @@ define(['require', 'angular'], function(require, angular) {
                     stateProvider.state(state, routerMap[state]);
                 }
                 urlRouterProvider.otherwise('/app/home');
+
+                // use the HTML5 History API
                 locationProvider.html5Mode(true);
             }
         ])
@@ -103,7 +105,7 @@ define(['require', 'angular'], function(require, angular) {
                 rootScope.$state = state;
                 rootScope.$stateParams = stateParams;
 
-                templateCache.put('header.html', '2345678765432');
+                templateCache.put('header.html', '<!-- header -->');
             }
         ]);
 

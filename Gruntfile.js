@@ -21,6 +21,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     base: '.',
+                    index: '/index.html',
                     middleware: require('./lib/middleware')
                 }
             }

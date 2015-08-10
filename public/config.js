@@ -28,6 +28,7 @@ require.config({
         // 三方插件配置
         'ready': 'vendor/requirejs-domready/domReady',
         'text': 'vendor/requirejs-text/text',
+        'external': 'js/config/external',
 
         // 业务模块配置
         'app': 'js/app',
@@ -44,6 +45,14 @@ require.config({
             onXhrComplete: function(xhr, url) {
                 //Called whenever an XHR has completed its work. Useful
                 //if browser-specific xhr cleanup needs to be done.
+            }
+        },
+
+        external: {
+            domain: 'view.1688.com',
+            
+            onReqComplete: function(data) {
+
             }
         }
     },
@@ -70,5 +79,8 @@ require.config({
         // kick start application... see startup.js
         'js/startup'
     ],
+
+    waitSeconds: 5,
+
     urlArgs: 'v=' + (+new Date())
 });

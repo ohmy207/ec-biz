@@ -74,8 +74,8 @@ define(['require', 'angular'], function(require, angular) {
 
     // return a method.
     return function(app) {
-        app.config(['$stateProvider', '$urlRouterProvider',
-            function(stateProvider, urlRouterProvider) {
+        app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+            function(stateProvider, urlRouterProvider, locationProvider) {
                 stateProvider.decorator('views', function(state, parent) {
                     var result = {},
                         views = parent(state);
@@ -94,6 +94,7 @@ define(['require', 'angular'], function(require, angular) {
                     stateProvider.state(state, routerMap[state]);
                 }
                 urlRouterProvider.otherwise('/app/home');
+                locationProvider.html5Mode(true);
             }
         ])
 

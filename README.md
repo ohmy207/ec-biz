@@ -8,11 +8,15 @@
 
 -引入`库包管理`，稳定良好的文件组织结构
 
+
 -支持`构建压缩`，提供hook自定义构建打包任务
+
 
 -内置服务器，提供`请求转发`，`livereload`
 
+
 -`热部署`功能
+
 
 -`增量发布`，统一使用版本号区分资源
 
@@ -20,7 +24,9 @@
 
 -项目的`自动化构建`,包括是`库文件管理`，库之间的依赖关系，代码的压缩合并
 
+
 -还有静态资源的`版本号`
+
 
 -URL的设计文件的组织结构保持高度统一
 
@@ -30,7 +36,7 @@
 
 -项目使用 `RequireJS` + `Bootstrap` + `Angular` 开发模式
 
--前端库采用 `bower` 管理，因此使用前请前往<http://bower.io>下载安装
+-前端库采用 `bower` 管理，因此使用前请前往 <http://bower.io> 下载安装
 
 目录结构
 
@@ -55,7 +61,7 @@
 
 使用方法
 
-``` 
+``` shell
 npm install -g bower
 git clone git@github.com:mycoin/ec-biz.git && cd ec-biz
 node server.js
@@ -81,4 +87,3 @@ node server.js
 ------
 
 [nqliujiangtao@gmail.com](mailto:nqliujiangtao@gmail.com)
-

@@ -94,26 +94,53 @@ ul {
     margin-right: 0 !important;
 }
 
+// 内容
+.cl-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    table-layout: fixed;
+}
+
 .cl-wrapper .cl-container {
     position: relative;
+    display: table-cell;
     height: 100%;
     width: 100%;
 
-    padding: 0;
+    padding: 0 15px;
     margin: 0;
 }
+
+@media (min-width: 980px) {
+    .cl-sidebar .cl-vnavigation {
+        display: block !important;
+    }
+}
+
+@media (max-width: 979px) {
+    .cl-sidebar {
+        width: 55px!important;
+    }
+}
+
 @media (min-width: 768px) {
     .cl-wrapper .cl-container {
         width: 100%;
+        // background: red
     }
 }
+
 @media (min-width: 992px) {
     .cl-wrapper .cl-container {
         width: 100%;
+        // background: green;
     }
 }
 @media (min-width: 1200px) {
     .cl-wrapper .cl-container {
         width: 100%;
+        // background: #FFFF00
     }
 }

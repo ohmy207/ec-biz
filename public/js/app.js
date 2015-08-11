@@ -7,7 +7,7 @@
  */
 'use strict';
 
-define(['angular'], function(angular) {
+define(['angular', 'components/index'], function(angular) {
 
     // var main = angular.module('appMain', []);
 
@@ -34,8 +34,9 @@ define(['angular'], function(angular) {
         'ui.utils',
 
         'ngAnimate',
-        'ngSanitize',
         'ngResource',
+        'ngScrollbar',
+        'ngSanitize',
         'ngWebSocket'
     ]);
 });

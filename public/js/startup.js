@@ -37,13 +37,12 @@ define(['require', 'angular', 'app', './modules/config'], function(require, angu
         function() {
             console.debug('[startup] angular.bootstrap()');
 
-            if (typeof config == 'function') {
+            if (typeof config === 'function') {
                 config(app);
             }
 
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
-
             console.debug(new Date() - GLOBAL_STARTTIME);
         });
 });

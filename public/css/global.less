@@ -1,10 +1,9 @@
-@import 'modules/all.less';
+@import 'mixin/all.less';
 body {
     padding-top: 88px;
     *:focus {
-        outline: none!important
+        outline: none!important;
     }
-
     a {
         cursor: pointer;
     }
@@ -22,6 +21,6 @@ body {
         .relative(_, _, _, -12px);
         margin: 50vh auto;
     }
+    .keyframes-typing();
 }
 
-.keyframes-typing();

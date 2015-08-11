@@ -14,7 +14,7 @@ define(['require', 'angular'], function(require, angular) {
     var routerMap = {
         'app': {
             url: '/app',
-            abstract: true
+            'abstract': true
         },
 
         'app.home': {
@@ -91,7 +91,9 @@ define(['require', 'angular'], function(require, angular) {
                 });
 
                 for (var state in routerMap) {
-                    stateProvider.state(state, routerMap[state]);
+                    if (routerMap.hasOwnProperty(state)) {
+                        stateProvider.state(state, routerMap[state]);
+                    }
                 }
                 urlRouterProvider.otherwise('/app/home');
 

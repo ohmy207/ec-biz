@@ -82,5 +82,5 @@ require.config({
 
     waitSeconds: 5,
 
-    urlArgs: 'v=' + (+new Date())
+    // urlArgs: 'v=' + (+new Date())
 });

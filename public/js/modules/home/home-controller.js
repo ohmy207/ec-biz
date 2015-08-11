@@ -11,10 +11,10 @@ define(['angular', 'app', 'external!sl-off-rule'], function(angular, app, tpl) {
 	app.config(function($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('app.logout', {
-				url: "/logout",
+				url: '/logout',
 				views: {
 					screen: {
-						templateUrl: "public/page/app/logout.html",
+						templateUrl: 'public/page/app/logout.html',
 						controller: function($scope) {
 							$scope.message = tpl;
 						}

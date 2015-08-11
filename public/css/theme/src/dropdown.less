@@ -1,0 +1,108 @@
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0px;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #cccccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover > a:after {
+    border-left-color: #ffffff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-menu li > a:hover {
+    background-color: #2391ed;
+    background-image: none;
+    color: #FFF;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu li > a {
+    font-size: 12px;
+    padding: 5px 20px;
+    clear: both;
+    color: #333333;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    white-space: nowrap;
+}
+
+.dropdown-menu.col-menu-2 {
+    min-width: 405px;
+    padding-bottom: 10px;
+    padding-top: 7px;
+}
+
+.dropdown-menu.col-menu-2 > li:first-child ul {
+    border-right: 1px solid #E8E8E8;
+}
+
+.dropdown-menu.col-menu-2 > li > ul > li a {
+    padding-left: 32px;
+}
+
+.dropdown-menu.col-menu-2 > li > ul {
+    padding: 0;
+}
+
+.dropdown-menu.col-menu-2 > li > ul > li {
+    list-style: none;
+}
+
+.dropdown-header {
+    color: #2083D6;
+    margin-top: 6px;
+    padding-left: 11px;
+    cursor: pointer;
+}
+
+.dropdown-header i {
+    font-size: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.dropdown-menu {
+    background-clip: none;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.18);
+}

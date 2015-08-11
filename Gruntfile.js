@@ -44,16 +44,37 @@ module.exports = function(grunt) {
                 options: {
                     reload: true
                 }
+            },
+
+            javascript: {
+                files: [
+                    'public/js/{*,**}/*.js'
+                ],
+                tasks: ['jshint']
+            },
+        },
+
+        // Verify javascript
+        jshint: {
+            options: grunt.file.readJSON('.jshintrc'),
+            test: {
+                files: {
+                    src: [
+                        'public/js/{*,**}/*.js'
+                    ]
+                }
             }
         }
     });
 
     grunt.registerTask('server', ['connect:server', 'watch']);
+    grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', function() {
         grunt.log.subhead('Please use one of the following commands:');
 
         grunt.log.writeln('• grunt server  启动静态服务器.');
         grunt.log.writeln('• grunt build   基础编译.');
+        grunt.log.writeln('• grunt test    代码正确性检测.');
 
         grunt.log.writeln('\n\nsee all tasks `grunt --verbose`');
     });

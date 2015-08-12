@@ -27,7 +27,7 @@ define(['angular', 'components/index'], function(angular) {
     //         replace: true
     //     };
     // });
-    
+
     return angular.module('app', [
         'ui.router',
         'ui.bootstrap',
@@ -35,8 +35,9 @@ define(['angular', 'components/index'], function(angular) {
 
         'ngAnimate',
         'ngResource',
-        'ngScrollbar',
         'ngSanitize',
-        'ngWebSocket'
+        'ngWebSocket',
+
+        'appDirective'
     ]);
 });

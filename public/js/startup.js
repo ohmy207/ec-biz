@@ -43,6 +43,11 @@ define(['require', 'angular', 'app', './modules/config'], function(require, angu
 
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
-            console.debug(new Date() - GLOBAL_STARTTIME);
+
+            setTimeout(function() {
+                // angular.element('.cl-wrapper').addClass('sb-collapsed');
+            }, 2000);
+
+            console.debug(new Date() - window.GLOBAL_STARTTIME);
         });
 });

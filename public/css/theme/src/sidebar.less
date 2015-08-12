@@ -1,3 +1,40 @@
+// 折叠样式
+.sidebar-collapsed() {
+    .cl-sidebar {
+        width: 55px;
+    }
+    .cl-sidebar .cl-vnavigation {
+        display: block !important;
+    }
+    .cl-sidebar .cl-vnavigation li {
+        position: relative;
+    }
+    .cl-sidebar .cl-vnavigation .side-group a {
+        background: none;
+    }
+    .cl-sidebar .cl-vnavigation li a span {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .cl-sidebar .cl-vnavigation li ul {
+        display: none !important;
+    }
+    .cl-sidebar .collapse-button .search {
+        display: none;
+    }
+    .cl-sidebar .collapse-button {
+        width: 55px;
+    }
+    .cl-sidebar .sub-menu-nav {
+        display: block!important;
+    }
+
+    .cl-vnavigation li a i {
+        font-size: 17px;
+    }
+}
+
 .cl-wrapper.animate-collapse .cl-sidebar {
     -webkit-transition: width 300ms linear;
     -moz-transition: width 300ms linear;
@@ -16,6 +53,7 @@
     -o-transition: margin 500ms linear, font-size 500ms linear;
     transition: margin 500ms linear, font-size 500ms linear;
 }
+
 
 .cl-sidebar {
     background: #272930;
@@ -82,70 +120,13 @@
     -webkit-transition: width 300ms linear;
     -moz-transition: width 300ms linear;
     -o-transition: width 300ms linear;
-    transition: width 500ms linear;
-}
-// sb-collapsed
-.sb-collapsed .cl-sidebar {
-    width: 55px;
-}
-.sb-collapsed .cl-vnavigation li {
-    position: relative;
-}
-.sb-collapsed .cl-vnavigation .side-group a {
-    background-image: none;
-}
-.sb-collapsed .cl-vnavigation li a i {
-    margin: 0;
-    font-size: 17px;
-}
-.sb-collapsed .cl-vnavigation > li > a > span {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.sb-collapsed .cl-sidebar .collapse-button .search {
-    display: none;
-}
-.sb-collapsed .cl-sidebar .collapse-button {
-    width: 55px;
-}
-.sb-collapsed .cl-vnavigation li.open ul {
-    display: none !important;
-}
-.sb-collapsed .cl-sidebar {
-    width: 55px;
+    transition: width 300ms linear;
 }
 
-.sb-collapsed .cl-vnavigation li {
-    position: relative;
+.cl-wrapper.sb-collapsed {
+    .sidebar-collapsed();
 }
-.sb-collapsed .cl-vnavigation .side-group a {
-    background-image: none;
-}
-.sb-collapsed .cl-vnavigation li a i {
-    margin: 0;
-    font-size: 17px;
-}
-.sb-collapsed .cl-vnavigation > li > a > span {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.sb-collapsed .cl-vnavigation .side-group > a {
-    background: url("img/arrow.png") no-repeat scroll right 14px top 18px rgba(0, 0, 0, 0);
-}
-.sb-collapsed .cl-vnavigation li a span {
-    opacity: 1;
-}
-.sb-collapsed .cl-vnavigation li a i {
-    font-size: 14px;
-    margin-right: 7px;
-    text-align: center;
-    width: 20px;
-}
-.sb-collapsed .cl-vnavigation li.open ul {
-    display: block !important;
-}
+
 // cl-vnavigation
 .cl-vnavigation {
     margin: 0 0 0 0;
@@ -225,39 +206,13 @@
 .cl-vnavigation .selected:hover ul a {
     background-color: #1A1C20;
 }
+
 @media (min-width: 980px) {
     .cl-sidebar .cl-vnavigation {
         display: block !important;
     }
 }
 @media (max-width: 979px) {
-    .cl-vnavigation li {
-        position: relative;
-    }
-    .cl-vnavigation .side-group a {
-        background: none;
-    }
-    .cl-vnavigation li a i {
-        margin: 0;
-        font-size: 17px;
-    }
-    .cl-vnavigation li a span {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    .cl-sidebar .cl-vnavigation {
-        display: block !important;
-    }
-    .cl-vnavigation li ul {
-        display: none !important;
-    }
-    .cl-sidebar .collapse-button {
-        display: none;
-    }
-    .cl-sidebar .collapse-button .search {
-        display: none;
-    }
     .navbar-default .navbar-brand {
         background-position: 0 11px;
         height: 50px;
@@ -267,6 +222,8 @@
     .navbar-default .navbar-brand span {
         display: none;
     }
+
+    .sidebar-collapsed();
 }
 // 以下代码作用于菜单浮层
 .sub-menu-nav ul {
@@ -324,9 +281,4 @@
     height: 43px;
     width: 10px;
     position: absolute;
-}
-@media (max-width: 979px) {
-    .sub-menu-nav {
-        display: block!important;
-    }
 }

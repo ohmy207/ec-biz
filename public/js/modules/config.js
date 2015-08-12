@@ -6,18 +6,14 @@
  * date:    {{date}}
  */
 'use strict';
-define(
-	[
+define([
 		'require',
 		'angular',
-
 		'app',
-
 		'../config/router',
 		'../config/securty'
 	],
 	function(require, angular, app, router, securty) {
-
 		securty(app);
 		router(app, '/app/home');
 

@@ -7,13 +7,10 @@
  */
 'use strict';
 
-
 // Inner dependent component set
-define(['require', 'angular'], function(require, angular) {
+define(function(require, exports, module) {
 
-	angular.module('appIndex', [
-		'appConfig',
-		'appFilter',
-		'appDirective'
-	]);
+    // directive, filters
+    require('./app/index');
+
 });

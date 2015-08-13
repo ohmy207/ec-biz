@@ -19,23 +19,26 @@
     <link href="public/vendor/fontawesome/css/font-awesome.css" rel="stylesheet" />
     
     <link href="public/css/global.css" rel="stylesheet" />
-    <link href="public/css/theme/default.css" rel="stylesheet" />
+    <link href="public/css/theme.css" rel="stylesheet" />
 
     <script type="text/javascript">
     var GLOBAL_STARTTIME = new Date();
     </script>
-    <!--[if lt IE 7]><![endif]-->
+    <!--[if lt IE 7]>
+        
+    <![endif]-->
 </head>
 <body>
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-    <div ui-view></div>
-
-    <!-- 欢迎模块 -->
-    <div class="loading-container">
-        <div class="loader"></div>
+    <div ui-view>
+        <div class="loading-container">
+            <div class="loader"></div>
+            <div class="error"></div>
+        </div>
     </div>
+
     <script src="public/vendor/requirejs/require.js" data-main="public/config"></script>
 </body>
 </html>

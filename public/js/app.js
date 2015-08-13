@@ -7,7 +7,7 @@
  */
 'use strict';
 
-define(['angular', 'components/index', 'config/index', 'modules/index'], function(angular) {
+define(['require', 'angular', 'components/index', 'config/index', 'modules/index'], function(require, angular) {
 
     // just need to create a module
     return angular.module('app', [
@@ -22,6 +22,7 @@ define(['angular', 'components/index', 'config/index', 'modules/index'], functio
 
         'appConfig',
         'appFilter',
+        'appBootable',
         'appDirective'
     ]);
 });

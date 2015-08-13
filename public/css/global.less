@@ -1,4 +1,4 @@
-@import 'mixin/all.less';
+@import 'global/all.less';
 body {
     padding-top: 88px;
     *:focus {
@@ -11,16 +11,26 @@ body {
 
 .loading-container {
     z-index: 2000;
-    background: #2dc3e8;
+    background: #2DC3E8;
     .fixed(0);
 
     .loader {
-        .animation(typing 1s alternate);
+        .animation(typing 2s alternate);
         .border-radius(50%);
-        .size(6px);
+        .size(7px);
         .relative(_, _, _, -12px);
         margin: 50vh auto;
     }
+
+    .error {
+        .absolute(0);
+        .animation(fadeIn 10s);
+        background: url(img/error.png) center 40% no-repeat #FFF;
+        z-index: 1;
+    }
+
     .keyframes-typing();
 }
 
+
+        

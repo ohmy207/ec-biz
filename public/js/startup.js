@@ -15,6 +15,9 @@
             window.console[names[i]] = function() {};
         }
     }
+    // window.onerror = function () {
+    //     return true;
+    // };
 })();
 
 define(['require', 'angular', 'app'], function(require, angular, app) {
@@ -36,6 +39,5 @@ define(['require', 'angular', 'app'], function(require, angular, app) {
 
             // OK, all resources are ready, bootstrap the application now!
             angular.bootstrap(document, ['app']);
-            angular.element('.loading-container').fadeOut();
         });
 });

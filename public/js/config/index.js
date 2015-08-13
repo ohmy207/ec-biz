@@ -8,13 +8,12 @@
 'use strict';
 
 // Inner dependent component set
-define(['require'], function(require) {
+define(function(require, exports, module) {
 
-	// directive, filters
-	require([
-		'./auto',
-		'./external',
-		'./securty',
-		'./router'
-	]);
+    // directive, filters
+    require('./auto');
+    require('./external');
+    require('./securty');
+    require('./router');
+
 });

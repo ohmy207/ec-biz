@@ -13,6 +13,15 @@ define(['angular', './module'], function(angular, module) {
 			replace: true
 		};
 	});
+
+	var tpl = '' +
+		'<div class="alert" ng-class="[type ? \'alert-\' + type : null]">' +
+		'	<button type="button" class="close" ng-if="dismissable" ng-click="$hide()">&times;</button>' +
+		'	<strong ng-bind="title"></strong>&nbsp;<span ng-bind-html="content"></span>' +
+		'</div>';
+
+
+	
 	// module.directive('repeater', function($document) {
 	// 	return {
 	// 		restrict: 'A',

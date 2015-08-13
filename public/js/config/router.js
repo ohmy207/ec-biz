@@ -86,6 +86,7 @@ define(['angular', './module'], function(angular, app) {
                     }
                     result[name] = config;
                 });
+
                 return result;
             });
 
@@ -98,15 +99,6 @@ define(['angular', './module'], function(angular, app) {
 
             // use the HTML5 History API
             locationProvider.html5Mode(true);
-        }
-    ])
-
-    .run(['$rootScope', '$state', '$stateParams', '$templateCache',
-        function(rootScope, state, stateParams, templateCache) {
-            rootScope.$state = state;
-            rootScope.$stateParams = stateParams;
-
-            templateCache.put('header.html', '<!-- header -->');
         }
     ]);
 });

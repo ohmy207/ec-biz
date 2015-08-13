@@ -7,14 +7,13 @@
  */
 'use strict';
 
-// Inner dependent component set
-define(['require'], function(require) {
 
-	// directive, filters
-	require([
-		'./auto',
-		'./external',
-		'./securty',
-		'./router'
+// Inner dependent component set
+define(['require', 'angular'], function(require, angular) {
+
+	angular.module('appIndex', [
+		'appConfig',
+		'appFilter',
+		'appDirective'
 	]);
 });

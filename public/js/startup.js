@@ -12,9 +12,7 @@
         ];
         window.console = {};
         for (var i = 0; i < names.length; i++) {
-            window.console[names[i]] = function() {
-                // noop
-            };
+            window.console[names[i]] = function() {};
         }
     }
 })();

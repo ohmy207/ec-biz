@@ -22,4 +22,6 @@ define(['angular', 'app', 'external!sl-off-rule'], function(angular, app, tpl) {
 				}
 			});
 	});
+
+	console.log(appConfig)
 });

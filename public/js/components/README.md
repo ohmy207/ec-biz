@@ -1,6 +1,6 @@
 ## 文档说明
 
-> 该目录提供项目通用代码，不参与任何业务需求，主要提供一下独立模块：
+该目录提供项目angular代码，不参与任何业务需求，主要提供一下独立模块：
 
 - `appDirective` 解析器指令
 - `appFilter`  模板过滤器
@@ -8,7 +8,7 @@
 
 
 
-#### 1.代码布置
+#### 1.模块申明方案
 
 - 申明模块，定义外部依赖，同时返回模块的引用
 
@@ -104,4 +104,30 @@ define(['angular', 'components/index'], function(angular) {
 ```
 
 代码中 `appDirective` 就通过依赖 `components/index` 被全部加载进来！
+
+
+
+#### 2. 目录结构
+
+``` shell
+├── README.md
+├── directive                 # 指令申明
+│   ├── bootstrap-switch.js
+│   ├── hello-world.js
+│   ├── module.js
+│   └── ng-scrollbar.js
+├── filter
+│   ├── collection.js
+│   ├── module.js
+│   └── string.js
+├── index.js                  # 模块加载器, require('components/index')
+├── plugin
+│   ├── notifications.js
+│   └── util.js
+└── service
+    ├── query.js
+    └── subscript.js
+```
+
+
 

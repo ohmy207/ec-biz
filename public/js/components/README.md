@@ -25,6 +25,8 @@ define(['angular'], function(angular) {
 
 > 注意文件名称必须是 `module.js` ， 该模块 `只能` 被具体实现引用，`绝对不能`被外部其他任何模块引用。
 
+**PS**：这段代码有两个很重要的作用，在全局对象 `angular` 开辟空间，保证其他模块能访问的到，另外一个功能是 `返回引用` ，这里返回的引用将会被逻辑实现者使用，如果少了这一步就会失去 requireJS 核心价值！
+
 
 
 - 实现模块具体逻辑
@@ -64,10 +66,7 @@ define(['require'], function(require) {
 	require([
 		'./directive/bootstrap-switch',
 		'./directive/hello-world',
-		'./directive/ng-scrollbar',
-
-		'./filter/collection',
-		'./filter/string'
+		'./directive/ng-scrollbar'
 	]);
 });
 ```
@@ -84,50 +83,27 @@ define(['require'], function(require) {
 
 ``` javascript
 'use strict';
+define([
+        'angular',
+        'components/index' // <<< look at this
+    ],
+    function(angular) {
 
-define(['angular', 'components/index'], function(angular) {
+        // just need to create a module
+        return angular.module('app', [
+            'ui.router',
+            'ui.bootstrap',
+            'ui.utils',
 
-    // just need to create a module
-    return angular.module('app', [
-        'ui.router',
-        'ui.bootstrap',
-        'ui.utils',
+            'ngAnimate',
+            'ngResource',
+            'ngSanitize',
+            'ngWebSocket',
 
-        'ngAnimate',
-        'ngResource',
-        'ngSanitize',
-        'ngWebSocket',
+            'appDirective' // <<< look this line
+        ]);
+    });
 
-        'appDirective' // <<< look this line
-    ]);
-});
 ```
 
 代码中 `appDirective` 就通过依赖 `components/index` 被全部加载进来！
-
-
-
-#### 2. 目录结构
-
-``` shell
-├── README.md
-├── directive                 # 指令申明
-│   ├── bootstrap-switch.js
-│   ├── hello-world.js
-│   ├── module.js
-│   └── ng-scrollbar.js
-├── filter
-│   ├── collection.js
-│   ├── module.js
-│   └── string.js
-├── index.js                  # 模块加载器, require('components/index')
-├── plugin
-│   ├── notifications.js
-│   └── util.js
-└── service
-    ├── query.js
-    └── subscript.js
-```
-
-
-

@@ -8,7 +8,7 @@
 'use strict';
 
 // global router config
-define(['require', 'angular'], function(require, angular) {
+define(['angular', './module'], function(angular, app) {
 
     // router map list
     var routerMap = {
@@ -73,43 +73,40 @@ define(['require', 'angular'], function(require, angular) {
     };
 
     // return a method.
-    return function(app) {
-        app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-            function(stateProvider, urlRouterProvider, locationProvider) {
-                stateProvider.decorator('views', function(state, parent) {
-                    var result = {},
-                        views = parent(state);
+    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+        function(stateProvider, urlRouterProvider, locationProvider) {
+            stateProvider.decorator('views', function(state, parent) {
+                var result = {},
+                    views = parent(state);
 
-                    angular.forEach(views, function(config, name) {
-                        if (!config.template && !config.templateUrl && !config.templateProvider) {
-                            var statePath = state.name.replace('.', '/');
-                            config.templateUrl = 'public/page/' + statePath + '.html';
-                        }
-                        result[name] = config;
-                    });
-                    return result;
-                });
-
-                for (var state in routerMap) {
-                    if (routerMap.hasOwnProperty(state)) {
-                        stateProvider.state(state, routerMap[state]);
+                angular.forEach(views, function(config, name) {
+                    if (!config.template && !config.templateUrl && !config.templateProvider) {
+                        var statePath = state.name.replace('.', '/');
+                        config.templateUrl = 'public/page/' + statePath + '.html';
                     }
+                    result[name] = config;
+                });
+                return result;
+            });
+
+            for (var state in routerMap) {
+                if (routerMap.hasOwnProperty(state)) {
+                    stateProvider.state(state, routerMap[state]);
                 }
-                urlRouterProvider.otherwise('/app/home');
-
-                // use the HTML5 History API
-                locationProvider.html5Mode(true);
             }
-        ])
+            urlRouterProvider.otherwise('/app/home');
 
-        .run(['$rootScope', '$state', '$stateParams', '$templateCache',
-            function(rootScope, state, stateParams, templateCache) {
-                rootScope.$state = state;
-                rootScope.$stateParams = stateParams;
+            // use the HTML5 History API
+            locationProvider.html5Mode(true);
+        }
+    ])
 
-                templateCache.put('header.html', '<!-- header -->');
-            }
-        ]);
+    .run(['$rootScope', '$state', '$stateParams', '$templateCache',
+        function(rootScope, state, stateParams, templateCache) {
+            rootScope.$state = state;
+            rootScope.$stateParams = stateParams;
 
-    };
+            templateCache.put('header.html', '<!-- header -->');
+        }
+    ]);
 });

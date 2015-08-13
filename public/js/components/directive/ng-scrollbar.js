@@ -368,7 +368,6 @@ define(['angular', './module'], function(angular, module) {
         }
     ]);
 
-
     module.directive('ngScrollbarX', ['$timeout',
         function($timeout) {
             return {

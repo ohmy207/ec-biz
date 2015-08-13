@@ -10,15 +10,10 @@
 // Inner dependent component set
 define(['require'], function(require) {
 
-	//@TODO: automatic scanning, but exclude `module.js`, `index.js`
-
 	// directive, filters
 	require([
-		'./directive/bootstrap-switch',
-		'./directive/hello-world',
-		'./directive/ng-scrollbar',
-
-		'./filter/collection',
-		'./filter/string'
+		'./external',
+		'./securty',
+		'./router'
 	]);
 });

@@ -19,7 +19,7 @@
     }
 })();
 
-define(['require', 'angular', 'app', './modules/config'], function(require, angular, app, config) {
+define(['require', 'angular', 'app'], function(require, angular, app) {
 
     /*
      * place operations that need to initialize prior to app start here
@@ -35,19 +35,9 @@ define(['require', 'angular', 'app', './modules/config'], function(require, angu
             'angular-ui-utils'
         ],
         function() {
-            console.debug('[startup] angular.bootstrap()');
 
-            if (typeof config === 'function') {
-                config(app);
-            }
-
+            // OK, all resources are ready, bootstrap the application now!
             angular.bootstrap(document, ['app']);
             angular.element('.loading-container').fadeOut();
-
-            setTimeout(function() {
-                // angular.element('.cl-wrapper').addClass('sb-collapsed');
-            }, 2000);
-
-            console.debug(new Date() - window.GLOBAL_STARTTIME);
         });
 });

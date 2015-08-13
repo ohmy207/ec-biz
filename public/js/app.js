@@ -7,27 +7,9 @@
  */
 'use strict';
 
-define(['angular', 'components/index'], function(angular) {
+define(['angular', 'components/index', 'config/index'], function(angular) {
 
-    // var main = angular.module('appMain', []);
-
-
-    // // * loads sub modules and wraps them up into the `app` module
-    // // * this should be used for top-level module definitions only
-    // console.log('[app] angular.module("app")');
-
-    // main.controller('bootController', ['$rootScope', '$scope', function(rootScope, scope) {
-
-    // }]);
-
-    // main.directive('hello', function() {
-    //     return {
-    //         restrict: 'E',
-    //         template: '<div>Hi there</div>',
-    //         replace: true
-    //     };
-    // });
-
+    // just need to create a module
     return angular.module('app', [
         'ui.router',
         'ui.bootstrap',
@@ -38,6 +20,8 @@ define(['angular', 'components/index'], function(angular) {
         'ngSanitize',
         'ngWebSocket',
 
+        'appConfig',
+        'appFilter',
         'appDirective'
     ]);
 });

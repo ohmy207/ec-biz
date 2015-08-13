@@ -7,9 +7,9 @@
  */
 'use strict';
 
-// define the filter module
+// define the config module
 define(['angular'], function(angular) {
 
 	// just need to create a module,
-	return angular.module('appDirective', []);
+	return angular.module('appConfig', []);
 });

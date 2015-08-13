@@ -11,5 +11,5 @@
 define(['angular'], function(angular) {
 
 	// just need to create a module,
-	return angular.module('appDirective', []);
+	return angular.module('appFilter', []);
 });

@@ -4,7 +4,7 @@
  * see: http://github.com/requirejs/text for details
  */
 'use strict';
-define(['module', 'jquery'], function(module, jQuery) {
+define(['jquery'], function(jQuery) {
 
     var cmsCache = {};
 
@@ -17,6 +17,7 @@ define(['module', 'jquery'], function(module, jQuery) {
             if (conf.enableCache && cmsCache[name]) {
                 return onLoad(cmsCache[name]);
             }
+
             jQuery.ajax({
                 url: location.protocol + '//' + conf.domain + '/cmsinclude/' + name + '.html',
                 dataType: 'jsonp',

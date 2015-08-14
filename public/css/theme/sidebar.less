@@ -29,31 +29,10 @@
     .cl-sidebar .sub-menu-nav {
         display: block!important;
     }
-
     .cl-vnavigation li a i {
         font-size: 17px;
     }
 }
-
-.cl-wrapper.animate-collapse .cl-sidebar {
-    -webkit-transition: width 300ms linear;
-    -moz-transition: width 300ms linear;
-    -o-transition: width 300ms linear;
-    transition: width 500ms linear;
-}
-.cl-wrapper.animate-collapse .cl-vnavigation li a span {
-    -webkit-transition: opacity 500ms linear;
-    -moz-transition: opacity 500ms linear;
-    -o-transition: opacity 500ms linear;
-    transition: opacity 500ms linear;
-}
-.cl-wrapper.animate-collapse .cl-vnavigation li a i {
-    -webkit-transition: margin 500ms linear, font-size 500ms linear;
-    -moz-transition: margin 500ms linear, font-size 500ms linear;
-    -o-transition: margin 500ms linear, font-size 500ms linear;
-    transition: margin 500ms linear, font-size 500ms linear;
-}
-
 
 .cl-sidebar {
     background: #272930;
@@ -115,12 +94,6 @@
     display: table-cell;
     vertical-align: top;
     padding-bottom: 49px;
-}
-.cl-wrapper.animate-collapse .cl-sidebar .collapse-button {
-    -webkit-transition: width 300ms linear;
-    -moz-transition: width 300ms linear;
-    -o-transition: width 300ms linear;
-    transition: width 300ms linear;
 }
 
 .cl-wrapper.sb-collapsed {
@@ -225,6 +198,8 @@
 
     .sidebar-collapsed();
 }
+
+
 // 以下代码作用于菜单浮层
 .sub-menu-nav ul {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.22);

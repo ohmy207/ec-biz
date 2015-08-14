@@ -20,7 +20,7 @@
     // };
 })();
 
-define(['require', 'angular', 'app'], function(require, angular, app) {
+define(['require', 'angular', './app'], function(require, angular, app) {
 
     /*
      * place operations that need to initialize prior to app start here

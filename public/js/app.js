@@ -7,10 +7,10 @@
  */
 'use strict';
 
-define(['require', 'angular', 'components/index', 'config/index', 'modules/index'], function(require, angular) {
+define(['require', 'angular', './components/index', './config/index', './modules/index'], function(require, angular) {
 
     // just need to create a module
-    return angular.module('app', [
+    angular.module('app', [
         'ui.router',
         'ui.bootstrap',
         'ui.utils',

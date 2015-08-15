@@ -14,7 +14,6 @@ define(function(require, exports, module) {
 	require('./directive/bootstrap-switch');
 	require('./directive/hello-world');
 	require('./directive/ng-scrollbar');
-	
 	require('./filter/collection');
 	require('./filter/string');
 

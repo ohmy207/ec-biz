@@ -11,11 +11,9 @@
 define(function(require, exports, module) {
 
     // directive, filters
-	require('./directive/bootstrap-switch');
-	require('./directive/hello-world');
-	require('./directive/ng-scrollbar');
-	
-	require('./filter/collection');
-	require('./filter/string');
+    require('./auto');
+    require('./external');
+    require('./securty');
+    require('./router');
 
 });

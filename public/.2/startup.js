@@ -36,7 +36,7 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             'angular-ui-utils'
         ],
         function() {
-            
+
             // OK, all resources are ready, bootstrap the application now!
             angular.bootstrap(document, ['app']);
         });

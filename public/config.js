@@ -28,10 +28,10 @@ require.config({
         // 三方插件配置
         'ready': 'vendor/requirejs-domready/domReady',
         'text': 'vendor/requirejs-text/text',
-        'external': 'js/config/external' //,
+        'external': 'js/config/external',
 
         // // 业务模块配置
-        // 'app': 'js/app',
+        'app': 'js/main/module',
         // 'config': 'js/config',
         // 'modules': 'js/modules',
         // 'components': 'js/components'

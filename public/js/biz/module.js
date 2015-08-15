@@ -11,7 +11,7 @@
 // Inner dependent component set
 define(['require', 'angular'], function(require, angular) {
 
-	return angular.module('app', [
+	var app = angular.module('app', [
 
 		'ui.router',
 		'ui.bootstrap',
@@ -26,4 +26,10 @@ define(['require', 'angular'], function(require, angular) {
 		'appFilter',
 		'appDirective'
 	]);
+
+	app.config(function() {
+		console.log(1)
+	});
+
+	return app;
 });

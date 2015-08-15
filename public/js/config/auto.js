@@ -14,5 +14,4 @@ define(['angular', './module'], function(angular, module) {
 			rootScope.$stateParams = stateParams;
 		}
 	]);
-	
 });

@@ -27,6 +27,8 @@ define(['require', 'angular', './app'], function(require, angular, app) {
      * using the `run` function on the top-level module
      */
     require([
+            './components/index',
+
             'angular-animate',
             'angular-bootstrap',
             'angular-resource',
@@ -36,8 +38,9 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             'angular-ui-utils'
         ],
         function() {
-            
+
             // OK, all resources are ready, bootstrap the application now!
             angular.bootstrap(document, ['app']);
+            console.debug('[startup.js] bootstrap finish.');
         });
 });

@@ -12,8 +12,9 @@
 define(['require', 'angular'], function(require, angular) {
 
 	return angular.module('appBootable', [
-		'appConfig',
-		'appFilter',
-		'appDirective'
+
+		'appFilters',
+		'appDirectives',
+		'appServices'
 	]);
 });

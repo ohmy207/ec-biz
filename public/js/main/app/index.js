@@ -6,7 +6,7 @@
  * date:    {{date}}
  */
 
-define(function(require, exports, module) {
+define(function(require) {
 
     var angular = require('angular');
     var module = require('../module');
@@ -52,5 +52,6 @@ define(function(require, exports, module) {
                 }
             }
         });
+
     }]);
 });

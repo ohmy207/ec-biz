@@ -32,9 +32,9 @@ require.config({
 
         // // 业务模块配置
         'app': 'js/main/module',
-        // 'config': 'js/config',
-        // 'modules': 'js/modules',
-        // 'components': 'js/components'
+        'config': 'js/config',
+        'biz': 'js/biz',
+        'components': 'js/components'
     },
 
     config: {

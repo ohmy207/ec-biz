@@ -10,8 +10,11 @@
 // Inner dependent component set
 define(function(require, exports, module) {
 
-    // load components, config and load the biz index file
-    require('./components/index');
-    require('./config/index');
-    require('./biz/index');
+	// load config and load the biz index file
+	require('./config/auto');
+	require('./config/external');
+	require('./config/securty');
+	require('./config/router');
+
+	require('./biz/index');
 });

@@ -1,5 +1,4 @@
 <div class="cl-screen">
-
   	<div class="row">
   		<div class="col-md-6 col-sm-6">
   			<div class="block-flat">
@@ -192,17 +191,8 @@
 					<h3>Pagination</h3>
 				</div>
 				<div class="content">
-					<div>
-						<ul class="pagination pagination-lg">
-						  <li class="disabled"><a href="#">&laquo;</a></li>
-						  <li class="active"><a href="#">1</a></li>
-						  <li><a href="#">2</a></li>
-						  <li><a href="#">3</a></li>
-						  <li><a href="#">4</a></li>
-						  <li><a href="#">5</a></li>
-						  <li><a href="#">&raquo;</a></li>
-						</ul>
-					</div>
+
+					<pagination class="pagination-lg" direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
 					<div>							
 						<ul class="pagination">
 						  <li><a href="#">&laquo;</a></li>

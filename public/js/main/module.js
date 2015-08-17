@@ -14,7 +14,7 @@ define(['require', 'angular'], function(require, angular) {
 	var app = angular.module('app', [
 
 		'ui.router',
-		// 'ui.bootstrap',
+		'ui.bootstrap',
 		'ui.utils',
 
 		'ngAnimate',

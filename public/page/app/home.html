@@ -1,4 +1,67 @@
-<div class="cl-screen" style="width:1090px">
+<div class="cl-screen">
+
+  	<div class="row">
+  		<div class="col-md-6 col-sm-6">
+  			<div class="block-flat">
+				<div class="header">							
+					<h3>Modal Alerts</h3>
+				</div>
+				<div class="content">
+					<h4>Examples</h4>
+					<p>This is just an example of tooltip in a paragrhap content writen by <a data-toggle="tooltip" href="#" data-original-title="Default tooltip">Jeff Hanneman</a>, as you can see it is a clean design with many <a data-toggle="tooltip" href="#" data-original-title="I am a Tooltip">Tooltip</a> options.</p>
+					<div class="spacer2 text-center">
+						<button data-toggle="modal" data-target=".biz-info" type="button" class="btn btn-success"><i class="fa fa-check"></i> Success</button>
+						<button data-toggle="modal" data-target=".biz-info" type="button" class="btn btn-primary"><i class="fa fa-info-circle"></i> Information</button>
+						<button data-toggle="modal" data-target=".biz-info" type="button" class="btn btn-warning"><i class="fa fa-warning"></i> Warning</button>
+						<button data-toggle="modal"  data-target=".biz-info" type="button" class="btn btn-danger"><i class="fa fa-times-circle"></i> Error</button>
+					</div>
+
+					<!-- .biz-info -->
+					<div class="modal fade biz-info" tabindex="-1" role="dialog">
+						<div class="modal-dialog">
+						  	<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								</div>
+								<div class="modal-body">
+									<div class="text-center">
+										<div class="i-circle primary"><i class="fa fa-check"></i></div>
+										<h4>Awesome!</h4>
+										<p>Changes has been saved successfully!</p>
+									</div>
+								</div>
+								<div class="modal-footer">
+								  	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+								  	<button type="button" class="btn btn-primary" data-dismiss="modal">Proceed</button>
+								</div>
+						  	</div>
+						</div>
+					</div>
+				</div><!-- .content -->
+			</div>
+  		</div>
+
+  		<div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+
+        
+  	</div>
+
 	<div class="row dash-cols">
 		<div class="col-sm-6 col-md-6">
 			<div class="block-flat">
@@ -733,8 +796,6 @@
 			</div>
 		</div>			
 	</div>
-
-
 	<div class="row">
       <div class="col-sm-6 col-md-6">
         <div class="block-flat">
@@ -799,7 +860,6 @@
         </div>				
       </div>
     </div>
-    
     <div class="row">
       <div class="col-md-12">
       

@@ -11,10 +11,29 @@
 // Inner dependent component set
 define(['require', 'angular'], function(require, angular) {
 
-	return angular.module('appBootable', [
+	var app = angular.module('app', [
 
-		'appFilters',
-		'appDirectives',
-		'appServices'
+		'ui.router',
+		// 'ui.bootstrap',
+		'ui.utils',
+
+		'ngAnimate',
+		'ngResource',
+		'ngSanitize',
+		'ngWebSocket',
+
+		'appConfig',
+		'appFilter',
+		'appDirective'
 	]);
+
+	app.config(['$urlRouterProvider', '$locationProvider',
+		function(urlRouterProvider, locationProvider) {
+			urlRouterProvider.otherwise('/app/home');
+			locationProvider.hashPrefix('!');
+			locationProvider.html5Mode(true);
+		}
+	]);
+
+	return app;
 });

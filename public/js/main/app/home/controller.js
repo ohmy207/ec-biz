@@ -12,7 +12,7 @@ define(['angular', '../module'], function(angular, module) {
         // app is an abstract controller.
         stateProvider.state('app', {
             url: '/app',
-            abstract: true,
+            'abstract': true,
             templateUrl: 'public/page/app.html'
         })
 

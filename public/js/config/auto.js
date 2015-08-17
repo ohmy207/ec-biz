@@ -12,6 +12,8 @@ define(['angular', './module'], function(angular, module) {
 		function(rootScope, state, stateParams, templateCache) {
 			rootScope.$state = state;
 			rootScope.$stateParams = stateParams;
+
+			// templateCache.removeAll();
 		}
 	]);
 });

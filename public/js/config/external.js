@@ -14,9 +14,6 @@ define(['jquery'], function(jQuery) {
                 domain: 'page.1688.com',
                 enableCache: 1
             };
-            if (conf.enableCache && cmsCache[name]) {
-                return onLoad(cmsCache[name]);
-            }
 
             jQuery.ajax({
                 url: location.protocol + '//' + conf.domain + '/cmsinclude/' + name + '.html',
@@ -27,7 +24,7 @@ define(['jquery'], function(jQuery) {
                     onLoad(data.content);
                 },
                 error: function() {
-                    onLoad('');
+                    onLoad(null);
                 }
             });
         }

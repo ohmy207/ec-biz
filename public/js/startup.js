@@ -37,10 +37,12 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             'angular-ui-router',
             'angular-ui-utils'
         ],
-        function() {
+        function(component) {
 
             // OK, all resources are ready, bootstrap the application now!
-            app.init();
-            console.debug('[startup.js] bootstrap finish.');
+            app.init(function() {
+                angular.bootstrap(document, ['app']);
+            });
+            console.log('[startup.js] bootstrap finish.');
         });
 });

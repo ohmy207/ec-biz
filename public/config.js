@@ -46,14 +46,6 @@ require.config({
                 //Called whenever an XHR has completed its work. Useful
                 //if browser-specific xhr cleanup needs to be done.
             }
-        },
-
-        external: {
-            domain: 'view.1688.com',
-
-            onReqComplete: function(data) {
-
-            }
         }
     },
 
@@ -65,6 +57,7 @@ require.config({
                 'jquery'
             ]
         },
+       
         'jquery': {
             exports: 'jquery'
         },
@@ -80,7 +73,7 @@ require.config({
         'js/startup'
     ],
 
-    waitSeconds: 5,
+    waitSeconds: 3,
 
     urlArgs: 'v=' + (+new Date())
 });

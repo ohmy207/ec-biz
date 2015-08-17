@@ -6,9 +6,7 @@
  * date:    {{date}}
  */
 
-define(function(require) {
-
-    var angular = require('angular');
+define(function(require, exports, module) {
     var module = require('../module');
 
     module.config(['$stateProvider', function($stateProvider) {
@@ -16,14 +14,20 @@ define(function(require) {
         // app is an abstract controller.
         $stateProvider.state('app', {
             url: '/app',
-            abstract: true
+            'abstract': true
         })
 
         .state('app.home', {
             url: '/home',
             views: {
                 'screen': {
-                    template: require('text!page/app/home.html')
+                    template: require('text!page/app/home.html'),
+                    controller: function($scope) {
+                        $scope.dateOptions = {
+                            'year-format': "'yy'",
+                            'starting-day': 1
+                        };
+                    }
                 }
             }
         })
@@ -52,6 +56,5 @@ define(function(require) {
                 }
             }
         });
-
     }]);
 });

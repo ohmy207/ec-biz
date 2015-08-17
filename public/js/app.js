@@ -14,14 +14,12 @@ define([
 	'./config/securty',
 	'./config/router',
 
-	'./biz/index'
+	'./main/index'
 ], function() {
 
 	return {
-		init: function() {
-			angular.element(document).ready(function() {
-				angular.bootstrap(document, ['app']);
-			});
+		init: function(callback) {
+			jQuery(callback);
 		}
 	};
 });

@@ -8,13 +8,20 @@
 'use strict';
 
 // Inner dependent component set
-define(function(require, exports, module) {
+define([
+	'./config/auto',
+	'./config/external',
+	'./config/securty',
+	'./config/router',
 
-	// load config and load the biz index file
-	require('./config/auto');
-	require('./config/external');
-	require('./config/securty');
-	require('./config/router');
+	'./biz/index'
+], function() {
 
-	require('./biz/index');
+	return {
+		init: function() {
+			angular.element(document).ready(function() {
+				angular.bootstrap(document, ['app']);
+			});
+		}
+	};
 });

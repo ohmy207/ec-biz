@@ -40,7 +40,7 @@ define(['require', 'angular', './app'], function(require, angular, app) {
         function() {
 
             // OK, all resources are ready, bootstrap the application now!
-            angular.bootstrap(document, ['app']);
+            app.init();
             console.debug('[startup.js] bootstrap finish.');
         });
 });

@@ -1,7 +1,6 @@
 # Created by https://www.gitignore.io/api/bower,grunt,maven,node,eclipse,linux,osx,svn,sublimetext,windows
 
 ## customer config
-
 public/vendor
 output
 

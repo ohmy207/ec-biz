@@ -1,14 +1,15 @@
 {
   "name": "ec-biz",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "广告投放系统",
   "main": "index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/mycoin/ec-biz"
   },
-  "script": {
-    "postinstall": "bower install"
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "grunt server"
   },
   "license": "MIT License",
   "dependencies": {

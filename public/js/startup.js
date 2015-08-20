@@ -35,7 +35,7 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             'angular-sanitize',
             'angular-websocket',
             'angular-ui-router',
-            'angular-ui-utils'
+            // 'angular-ui-utils'
         ],
         function(component) {
 

@@ -15,7 +15,7 @@ define(['require', 'angular'], function(require, angular) {
 
 		'ui.router',
 		'ui.bootstrap',
-		'ui.utils',
+		// 'ui.utils',
 
 		'ngAnimate',
 		'ngResource',

@@ -48,7 +48,9 @@ module.exports = function(grunt) {
 
             javascript: {
                 files: [
-                    'public/js/{*,**}/*.js'
+                    'public/config.js',
+                    'public/js/*.js',
+                    'public/js/**/*.js'
                 ],
                 tasks: ['jshint']
             },
@@ -60,7 +62,9 @@ module.exports = function(grunt) {
             test: {
                 files: {
                     src: [
-                        'public/js/{*,**}/*.js'
+                        'public/config.js',
+                        'public/js/*.js',
+                        'public/js/**/*.js'
                     ]
                 }
             }

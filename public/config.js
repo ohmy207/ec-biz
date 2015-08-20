@@ -28,13 +28,13 @@ require.config({
         // 三方插件配置
         'ready': 'vendor/requirejs-domready/domReady',
         'text': 'vendor/requirejs-text/text',
-        'external': 'js/config/external',
+        'external': 'js/config/external' //,
 
         // // 业务模块配置
-        'app': 'js/main/module',
-        'config': 'js/config',
-        'biz': 'js/biz',
-        'components': 'js/components'
+        // 'app': 'js/main/module',
+        // 'config': 'js/config',
+        // 'biz': 'js/biz',
+        // 'components': 'js/components'
     },
 
     config: {
@@ -57,7 +57,7 @@ require.config({
                 'jquery'
             ]
         },
-       
+
         'jquery': {
             exports: 'jquery'
         },

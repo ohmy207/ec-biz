@@ -13,6 +13,7 @@ define(['angular', './module'], function(angular, module) {
 			rootScope.$state = state;
 			rootScope.$stateParams = stateParams;
 
+
 			// templateCache.removeAll();
 		}
 	]);

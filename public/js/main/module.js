@@ -30,8 +30,7 @@ define(['require', 'angular'], function(require, angular) {
 	app.config(['$urlRouterProvider', '$locationProvider',
 		function(urlRouterProvider, locationProvider) {
 			urlRouterProvider.otherwise('/app/home');
-			locationProvider.hashPrefix('!');
-			locationProvider.html5Mode(true);
+			// locationProvider.html5Mode(true);
 		}
 	]);
 

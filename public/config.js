@@ -9,7 +9,7 @@
 
 require.config({
 
-    baseUrl: 'public/',
+    baseUrl: '/public',
 
     paths: {
         // 基础框架配置
@@ -33,7 +33,6 @@ require.config({
         // // 业务模块配置
         // 'app': 'js/main/module',
         // 'config': 'js/config',
-        // 'biz': 'js/biz',
         // 'components': 'js/components'
     },
 

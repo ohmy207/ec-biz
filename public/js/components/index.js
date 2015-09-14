@@ -13,6 +13,7 @@ define(function(require, exports, module) {
     // directive, filters
 	require('./directive/bootstrap-switch');
 	require('./directive/hello-world');
+	require('./directive/event');
 	require('./directive/ng-scrollbar');
 	
 	require('./filter/collection');

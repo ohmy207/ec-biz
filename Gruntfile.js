@@ -83,4 +83,8 @@ module.exports = function(grunt) {
         grunt.log.writeln('\n\nsee all tasks `grunt --verbose`');
     });
 
+    grunt.registerTask('template', function() {
+        
+    });
+
 };

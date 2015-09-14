@@ -21,6 +21,7 @@
     "requirejs-domready": "~2.0.1",
     "requirejs-text": "~2.0.14",
     "jquery": "~2.1.4",
-    "fontawesome": "~4.4.0"
+    "fontawesome": "~4.4.0",
+    "angular-tree-control": "~0.2.15"
   }
 }

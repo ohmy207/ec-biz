@@ -1,7 +1,7 @@
 /*
  * Copyright 2014 Alibaba Group, Inc. All rights reserved.
  *
- * file:    bootstrap-switch.js
+ * file:    securty.js
  * author:  mycoin (nqliujiangtao@gmail.com)
  * date:    {{date}}
  */

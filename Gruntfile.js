@@ -9,6 +9,8 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
 
+    var middleware = require('./lib/middleware');
+
     grunt.initConfig({
 
         // Built-in web server
@@ -22,7 +24,7 @@ module.exports = function(grunt) {
                 options: {
                     base: '.',
                     index: '/index.html',
-                    middleware: require('./lib/middleware')
+                    middleware: middleware
                 }
             }
         },
@@ -84,7 +86,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('template', function() {
-        
+
     });
 
 };

@@ -6,11 +6,10 @@
  * date:    {{date}}
  */
 define(['angular', './module'], function(angular, module) {
-	module.config(['$sceDelegateProvider',
-		function(sceDelegateProvider) {
-			sceDelegateProvider.resourceUrlWhitelist(
-				['self', 'http://**', 'https://**', 'ws://**', 'wss://**']
-			);
-		}
-	]);
+    module.config(['$sceDelegateProvider', '$locationProvider', function(sceDelegateProvider, locationProvider) {
+        locationProvider.html5Mode(true);
+        sceDelegateProvider.resourceUrlWhitelist(
+            ['self', 'http://**', 'https://**', 'ws://**', 'wss://**']
+        );
+    }]);
 });

@@ -15,13 +15,13 @@
             window.console[names[i]] = function() {};
         }
     }
+    
     // window.onerror = function() {
     //      return true;
     // };
 })();
 
 define(['require', 'angular', './app'], function(require, angular, app) {
-
     /*
      * place operations that need to initialize prior to app start here
      * using the `run` function on the top-level module
@@ -43,6 +43,7 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             app.init(function() {
                 angular.bootstrap(document, ['app']);
             });
+
             console.log('[startup.js] bootstrap finish.');
         });
 });

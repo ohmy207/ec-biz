@@ -1,0 +1,53 @@
+.arrow() {
+  border-style: solid;
+  .size(0px, 0px);
+  .inline-block();
+}
+
+.arrow-top(@size: 100px, @color: #000) {
+  border-width: 0 @size @size @size;
+  border-color: transparent transparent @color transparent;
+  .arrow();
+}
+
+.arrow-top-right(@size: 100px, @color: #000) {
+  border-width: 0 @size @size 0;
+  border-color: transparent @color transparent transparent;
+  .arrow();
+}
+
+.arrow-top-left(@size: 100px, @color: #000) {
+  border-width: @size @size 0 0;
+  border-color: @color transparent transparent transparent;
+  .arrow();
+}
+
+.arrow-bottom(@size: 100px, @color: #000) {
+  border-width: @size @size 0 @size;
+  border-color: @color transparent transparent transparent;
+  .arrow();
+}
+
+.arrow-bottom-left(@size: 100px, @color: #000) {
+  border-width:  @size 0 0 @size;
+  border-color: transparent transparent transparent @color;
+  .arrow();
+}
+
+.arrow-bottom-right(@size: 100px, @color: #000) {
+  border-width: 0 0 @size @size;
+  border-color: transparent transparent @color transparent;
+  .arrow();
+}
+
+.arrow-right(@size: 100px, @color: #000) {
+  border-width: @size 0 @size @size;
+  border-color: transparent transparent transparent @color;
+  .arrow();
+}
+
+.arrow-left(@size: 100px, @color: #000) {
+  border-width: @size @size @size 0;
+  border-color: transparent @color transparent transparent;
+  .arrow();
+}

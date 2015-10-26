@@ -1,0 +1,1 @@
+"use strict";define(["require","exports","module","./app/index"],function(e,t,n){e("./app/index")});

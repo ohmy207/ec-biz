@@ -1,0 +1,1 @@
+define(["angular","./module"],function(e,t){t.filter("match",function(){return function(t,n){var r=[];return e.isArray(t)?t.forEach(function(e){var t=!1,i=Object.keys(n);for(var s=0;s<i.length;s++){var o=i[s],u=n[o].toLowerCase();if(e[o].toString().toLowerCase().indexOf(u)!==-1){t=!0;break}}t&&r.push(e)}):r=t,r}})});

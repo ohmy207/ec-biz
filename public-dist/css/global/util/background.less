@@ -1,0 +1,27 @@
+.background-size(@value) {
+  -webkit-background-size: @value;
+     -moz-background-size: @value;
+       -o-background-size: @value;
+          background-size: @value;
+}
+
+.background-clip(@type) {
+  -webkit-background-clip: @type;
+     -moz-background-clip: @type;
+          background-clip: @type;
+}
+
+.background-origin(@origin) {
+       -moz-origin-size: @origin;
+    -webkit-origin-size: @origin;
+         -o-origin-size: @origin;
+            origin-size: @origin;
+}
+
+.color(@color, @background: transparent) {
+  color: @color;
+  .output() when not (@background = transparent) {
+    background-color: @background;
+  }
+  .output();
+}

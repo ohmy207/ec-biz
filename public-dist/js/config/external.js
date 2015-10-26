@@ -1,0 +1,1 @@
+"use strict";define(["jquery"],function(e){var t={};return{load:function(n,r,i,s){var o=s.config.external||{domain:"page.1688.com",enableCache:1};e.ajax({url:location.protocol+"//"+o.domain+"/cmsinclude/"+n+".html",dataType:"jsonp",jsonpCallback:"_cms_vm_jsonp_callback_",success:function(e){t[e.code]=e.content,i(e.content)},error:function(){i(null)}})}}});

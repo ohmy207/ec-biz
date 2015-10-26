@@ -1,0 +1,1 @@
+define(["angular","./module"],function(e,t){t.directive("bootstrapSwitch",function(){return{restrict:"A",scope:{sync:"=bootstrapSwitch"},link:function(t,n,r){e.element(n).bootstrapSwitch(),e.element(n).on("switchChange.bootstrapSwitch",function(e,n){t.sync=n,t.$apply()})}}})});

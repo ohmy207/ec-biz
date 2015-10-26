@@ -1,0 +1,1 @@
+define(["angular","./module"],function(e,t){t.directive("helloWorld",function(){return{restrict:"E",template:"<div>Hi there, hello World!</div>",replace:!0}})});

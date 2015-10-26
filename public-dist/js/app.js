@@ -1,0 +1,1 @@
+"use strict";define(["./config/auto","./config/external","./config/securty","./config/router","./main/index"],function(){return{init:function(e){jQuery(e)}}});

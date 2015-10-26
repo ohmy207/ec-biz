@@ -1,0 +1,258 @@
+.cl-sidebar {
+    background: #272930;
+    position: relative;
+    width: 216px;
+    z-index: 2;
+}
+.cl-sidebar .cl-toggle {
+    display: none;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+}
+.cl-sidebar .cl-toggle i {
+    font-size: 24px;
+    color: #C9D4F6;
+}
+.cl-sidebar .collapse-button {
+    background: #1F2126;
+    position: fixed;
+    width: 216px;
+    bottom: 0;
+    border-top: 1px solid #131519;
+    box-shadow: 0 1px 0 #2A2C31 inset;
+}
+.cl-sidebar .collapse-button .search {
+    width: 155px;
+    display: inline-block;
+    margin-right: 3px;
+    border-radius: 2px;
+    height: 33px;
+    background: none repeat scroll 0 0 #13151D;
+    font-size: 11px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07), 0 1px 2px rgba(0, 0, 0, 0.15) inset;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.cl-sidebar .collapse-button button {
+    margin: 0 !important;
+    background: transparent;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1) inset;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+.cl-sidebar .collapse-button button:hover {
+    background: #23252A;
+}
+.cl-wrapper.fixed-menu .menu-space {
+    position: fixed;
+    width: 216px;
+    background: #272930;
+}
+.cl-wrapper.fixed-menu .menu-space .content {
+    outline: none;
+}
+.cl-wrapper.sb-collapsed.fixed-menu .menu-space {
+    width: 55px;
+}
+.cl-wrapper .cl-sidebar {
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 49px;
+}
+
+.cl-wrapper.sb-collapsed {
+    .sidebar-collapsed();
+}
+
+// cl-vnavigation
+.cl-vnavigation {
+    margin: 0 0 0 0;
+    padding: 0;
+    border-top: 1px solid #1a1c20;
+    border-bottom: 1px solid #2f323a;
+}
+.cl-vnavigation .side-group a {
+    background: url("img/arrow.png") no-repeat scroll right 14px top 18px transparent;
+}
+.cl-vnavigation li a {
+    border-top: 1px solid #32353e;
+    border-bottom: 1px solid #1a1c20;
+    display: block;
+    padding: 14px 15px 13px 15px;
+    color: #c9d4f6;
+    font-size: 12px;
+    font-weight: 300;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+.cl-vnavigation li a:hover {
+    background-color: #2a2c34;
+}
+.cl-vnavigation li a i {
+    text-align: center;
+    width: 20px;
+    font-size: 14px;
+    margin-right: 7px;
+}
+.cl-vnavigation li a span {
+    display: inline-block;
+}
+.cl-vnavigation li ul {
+    background-color: #1A1C20;
+    display: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 4px;
+}
+.cl-vnavigation .side-group ul li:last-child {
+    padding-bottom: 13px;
+}
+.cl-vnavigation .side-group ul li {
+    background-color: #1a1c20;
+    list-style: none;
+}
+.cl-vnavigation .side-group ul li.dropdown-header {
+    display: none;
+}
+.cl-vnavigation .side-group ul li a {
+    font-size: 11px;
+    background-image: none;
+    padding: 7px 18px 7px 42px;
+    background-color: #1a1c20;
+}
+.cl-vnavigation .side-group ul li.active a {
+    background-color: #1e2025;
+    border-left: 1px solid #2494F2;
+}
+.cl-vnavigation .side-group ul li a:hover {
+    background-color: #1e2025;
+}
+.cl-vnavigation .side-group ul li a:first-child {
+    border-top: 0;
+}
+.cl-vnavigation .active .sub-menu {
+    display: block;
+}
+.cl-vnavigation .active > a {
+    background-color: #2A2C34;
+    border-left: 1px solid #2494F2;
+}
+.cl-vnavigation .selected:hover a {
+    background-color: #2494F2;
+}
+.cl-vnavigation .selected:hover ul a {
+    background-color: #1A1C20;
+}
+
+@media (min-width: 980px) {
+    .cl-sidebar .cl-vnavigation {
+        display: block !important;
+    }
+}
+@media (max-width: 979px) {
+    .navbar-default .navbar-brand {
+        background-position: 0 11px;
+        height: 50px;
+        width: 45px;
+        padding-left: 26px;
+    }
+    .navbar-default .navbar-brand span {
+        display: none;
+    }
+    .sidebar-collapsed();
+}
+
+
+// 以下代码作用于菜单浮层
+.sub-menu-nav ul {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.22);
+    color: #333;
+    background: #FFF;
+    padding: 5px 0;
+    min-width: 190px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 0;
+    border-radius: 3px;
+}
+.sub-menu-nav ul li:first-child {
+    padding-top: 0;
+}
+.sub-menu-nav ul li:last-child {
+    padding-bottom: 0;
+}
+.sub-menu-nav ul li.dropdown-header i {
+    text-align: center;
+    width: 15px;
+}
+.sub-menu-nav ul li.dropdown-header {
+    padding: 1px 11px;
+    padding-bottom: 6px;
+}
+.sub-menu-nav ul {
+    padding: 5px 0;
+}
+.sub-menu-nav ul li {
+    list-style: none;
+}
+.sub-menu-nav ul li a {
+    margin-right: -1px;
+    display: block;
+    font-size: 11px;
+    border-bottom: 0;
+    color: #333333;
+    text-shadow: none;
+    text-align: left;
+    background: transparent;
+    padding: 6px 20px 6px 31px;
+}
+.sub-menu-nav ul li a:hover {
+    background-color: #2391ED;
+    color: #FFF;
+}
+.sub-menu-nav ul:after {
+    background: url(img/menu-tail-left.png) no-repeat right 10px;
+    top: 0px;
+    content: "";
+    display: inline-block;
+    left: -9px;
+    height: 43px;
+    width: 10px;
+    position: absolute;
+}
+
+// 折叠样式
+.sidebar-collapsed() {
+    .cl-sidebar {
+        width: 55px;
+    }
+    .cl-sidebar .cl-vnavigation {
+        display: block !important;
+    }
+    .cl-sidebar .cl-vnavigation li {
+        position: relative;
+    }
+    .cl-sidebar .cl-vnavigation .side-group a {
+        background: none;
+    }
+    .cl-sidebar .cl-vnavigation li a span {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .cl-sidebar .cl-vnavigation li ul {
+        display: none !important;
+    }
+    .cl-sidebar .collapse-button .search {
+        display: none;
+    }
+    .cl-sidebar .collapse-button {
+        width: 55px;
+    }
+    .cl-sidebar .sub-menu-nav {
+        display: block!important;
+    }
+    .cl-vnavigation li a i {
+        font-size: 17px;
+    }
+}

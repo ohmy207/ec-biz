@@ -15,20 +15,18 @@
             window.console[names[i]] = function() {};
         }
     }
-    
+
     // window.onerror = function() {
     //      return true;
     // };
 })();
 
-define(['require', 'angular', './app'], function(require, angular, app) {
+define(['require', 'bootstrap', 'angular', './app', './components/index'], function(require, _, angular, app) {
+
     /*
-     * place operations that need to initialize prior to app start here
-     * using the `run` function on the top-level module
+     * The following resources do not need to be merged, so wrap them with `require`.
      */
     require([
-            './components/index',
-
             'angular-animate',
             'angular-bootstrap',
             'angular-resource',
@@ -37,7 +35,7 @@ define(['require', 'angular', './app'], function(require, angular, app) {
             'angular-ui-router',
             'angular-ui-utils'
         ],
-        function(component) {
+        function() {
 
             // OK, all resources are ready, bootstrap the application now!
             app.init(function() {

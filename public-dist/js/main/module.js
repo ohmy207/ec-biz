@@ -1,0 +1,1 @@
+"use strict";define(["require","angular"],function(e,t){var n=t.module("app",["ui.router","ui.bootstrap","ngAnimate","ngResource","ngSanitize","ngWebSocket","appConfig","appFilter","appDirective"]);return n.config(["$urlRouterProvider","$locationProvider",function(e,t){e.otherwise("/app/home")}]),n});

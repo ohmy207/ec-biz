@@ -1,0 +1,1 @@
+define(["angular","../module"],function(e,t){t.config(["$stateProvider",function(e){e.state("app",{url:"/app","abstract":!0,templateUrl:"public/page/app.html"}).state("app.home",{url:"/home",views:{screen:{templateUrl:"public/page/app/home.html"}}})}])});

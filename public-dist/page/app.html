@@ -1,0 +1,38 @@
+<header class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" ui-sref="app.home">
+				<span>广告投放平台</span>
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<div ng-include src="'public/page/common/nav.html'"></div>
+		</div>
+	</div>
+</header>
+<section class="cl-wrapper" ng-class="{'sb-collapsed':isCollapsed}">
+	<div class="cl-sidebar">
+		<div class="menu-space">
+			<div class="content">
+				<ul class="cl-vnavigation">
+					<div ng-include src="'public/page/common/side.html'"></div>
+				</ul>
+			</div>
+			<div style="position: fixed; z-index: 9999; top: 299px; left: 63px; display: none;" class="sub-menu-nav">
+				<ul class="sub-menu">
+					<li class="dropdown-header"><i class="fa fa-envelope nav-icon"></i><span>我的消息</span></li>
+					<li><a href="email-inbox.html">收件夹</a></li>
+					<li><a href="email-read.html">消息中心</a></li>
+					<li><a href="email-compose.html">新建...<span class="label label-primary pull-right">New</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="text-right collapse-button" style="padding:7px 9px;">
+			<input type="text" class="form-control search" placeholder="请输入关键词..."/>
+			<button id="sidebar-collapse" class="btn btn-default" style="">
+				<i style="color:#FFF;" class="fa fa-angle-left"></i>
+			</button>
+		</div>
+	</div>
+	<div class="cl-container container-fluid" ui-view="screen"></div>
+</section>

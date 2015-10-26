@@ -1,0 +1,21 @@
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0, 0, 0, 0.25), ...) {
+    -webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;
+            box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+
+.box-shadow(@x: 7px, @y: 7px, @blur: 13px, @spread: 0, @color: rgba(5, 5, 5, .55)) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+
+// Inner shadow
+
+.inner-shadow(@x: 7px, @y: 7px, @blur: 13px, @spread: 0, @color: rgba(5, 5, 5, .55)) {
+  -webkit-box-shadow: inset @arguments;
+     -moz-box-shadow: inset @arguments;
+          box-shadow: inset @arguments;
+}

@@ -1,0 +1,22 @@
+.size(@w, @h) {
+  height: @h;
+  width: @w;
+}
+.size(@w) {
+    .size(@w, @w);
+}
+
+// 盒尺寸设置
+.size(@width, @height, @border) {
+    @border-width: ~`2 * '@{border}'.match(/([\d]*)/g)[1]`;
+    .size(@width - @border-width, @height - @border-width);
+    border: @border;
+}
+
+.height(@height, @line-height: _) {
+    height: @height;
+    .output() when not (@line-height = _) {
+        line-height: @line-height;
+    }
+    .output();
+}

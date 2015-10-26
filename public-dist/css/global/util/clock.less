@@ -1,0 +1,65 @@
+.clock-hand(@values, @prefix: ~"", @suffix: ~"", @sides: top right bottom left) {
+    @val: ~"@{values}";
+    @count: ~`'@{val}'.match(/(\S+)/g).length * 1`;
+    @v0: ~`'@{val}'.match(/(\S+)/g)[0]`;
+    @v1: ~`'@{val}'.match(/(\S+)/g)[1] || '@{v0}'`;
+    @v2: ~`'@{val}'.match(/(\S+)/g)[2] || '@{v0}'`;
+    @v3: ~`'@{val}'.match(/(\S+)/g)[3] || '@{v1}' || '@{v0}'`;
+    @pre: ~`'@{prefix}' ? '@{prefix}-' : ''`;
+    @suf: ~`'@{suffix}' ? '-@{suffix}' : ''`;
+
+    .output() when not (@v0 = _) {
+        @side: extract(@sides, 1);
+        @{pre}@{side}@{suf}: @v0;
+    }
+    .output() when not (@v1 = _) {
+        @side: extract(@sides, 2);
+        @{pre}@{side}@{suf}: @v1;
+    }
+    .output() when not (@v2 = _) {
+        @side: extract(@sides, 3);
+        @{pre}@{side}@{suf}: @v2;
+    }
+    .output() when not (@v3 = _) {
+        @side: extract(@sides, 4);
+        @{pre}@{side}@{suf}: @v3;
+    }
+    .output();
+}
+
+.absolute(...) {
+    position: absolute;
+    z-index: 0;
+    .clock-hand(@arguments);
+}
+
+.fixed(...) {
+    position: fixed;
+    .clock-hand(@arguments);
+}
+
+.relative(...) {
+    position: relative;
+    z-index: 0;
+    .clock-hand(@arguments);
+}
+
+.padding(...) {
+    .clock-hand(@arguments, padding);
+}
+
+.margin(...) {
+    .clock-hand(@arguments, margin);
+}
+
+.border-color(...) {
+    .clock-hand(@arguments, border, color);
+}
+
+.border-style(...) {
+    .clock-hand(@arguments, border, style);
+}
+
+.border-width(...) {
+    .clock-hand(@arguments, border, width);
+}

@@ -1,0 +1,16 @@
+<!-- target:searchList -->
+<div class="searchlist-section">
+	<div class="list-functional-block">
+		您输入的关键字是<em>${keyword}</em>,为您找到<em>${total}</em>条记录
+		<div class="list-search" style="margin-top:0px">
+			<input data-ui="id:ListSearch;type:TextBox;" placeholder="请输入关键词">
+			<label data-ui="id:ListSearchValidity;type:Validity"></label>
+    		<span data-ui="id:SearchBtn;type:Button">搜索</span>
+    	</div>
+	</div>
+    <div id="list-table" class="list-table report-list-table" data-ui="type:Table;id:ListTable"></div>
+</div>
+<div class="list-plus-bar">
+    <div data-ui="type:Pager;id:ListPager;skin:table-pager"></div>
+</div>
+

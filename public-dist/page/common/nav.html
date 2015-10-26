@@ -1,0 +1,115 @@
+<!-- 左侧菜单 -->
+<ul class="nav navbar-nav">
+    <li class="active"><a ui-sref="app.home">首页</a></li>
+    <li><a ui-sref="app.external({url: 'http://cxt.1688.com/contrast-b.html'})">诚信通首页</a></li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            客服中心<b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="app.external({url: 'http://gys.1688.com/skill.html'})" title="交易技巧">交易技巧</a></li>
+            <li><a ui-sref="app.external({url: 'http://gys.1688.com/story.html'})" title="成功经验">成功经验</a></li>
+            <li><a ui-sref="app.external({url: 'http://gys.1688.com/pro.html'})" title="热门活动">热门活动</a></li>
+            <li class="dropdown-submenu">
+                <a>我的收藏夹</a>
+                <ul class="dropdown-menu">
+                    <li><a ui-sref="app.external({url: 'http://purchase.1688.com/favorites/favorite_offer.htm'})" title="收藏的货品">收藏的货品</a></li>
+                    <li><a ui-sref="app.external({url: 'http://purchase.1688.com/favorites/favorite_shop.htm'})" title="收藏的供应商">收藏的供应商</a></li>
+                    <li><a ui-sref="app.external({url: 'http://purchase.1688.com/favorites/trade_shop.htm'})" title="交易过的供应商">交易过的供应商</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的阿里<b class="caret"></b></a>
+        <ul class="dropdown-menu col-menu-2">
+            <li class="col-sm-6 no-padding">
+                <ul>
+                    <li class="dropdown-header"><i class="fa fa-group"></i>Users</li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="dropdown-header"><i class="fa fa-gear"></i>Config</li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-6 no-padding">
+                <ul>
+                    <li class="dropdown-header"><i class="fa fa-legal"></i>开发中选项</li>
+
+                    <li><a href="https://github.com/johnpapa/angular-styleguide">Angular-StyleGuide</a></li>
+                    <li><a ui-sref="app.external({url: 'http://fontawesome.dashgame.com/'})">Font Awesome</a></li>
+                    <li><a href="http://angular-ui.github.io/bootstrap/">Bootstrap</a></li>
+                    <li><a ui-sref="app.external({url: 'http://www.requirejs.cn/'})">RequireJS</a></li>
+                    <li><a ui-sref="app.external({url: 'http://www.apjs.net/'})">AngularJS</a></li>
+                    <li><a href="https://github.com/mycoin/ec-biz">GitHub.com</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a ui-sref="app.about">关于我们</a></li>
+</ul> 
+
+<!-- 右侧菜单 -->
+<ul class="nav navbar-nav navbar-right">
+    <li class="button dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-comments"></i></a>
+        <ul class="dropdown-menu">
+            <li>
+                <div class="content" tabindex="0" style="right: -15px;">
+                    <ul>
+                        <li><a href="#"><span class="date pull-right">20 Oct.</span><span class="name">Adam</span>is now following you</a></li>
+                        <li><a href="#"><span class="date pull-right">2 Nov.</span><span class="name">Michael</span>is now following you</a></li>
+                        <li><a href="#"><span class="date pull-right">2 Nov.</span><span class="name">Lucy</span>is now following you</a></li>
+                    </ul>
+                </div>
+                <ul class="foot">
+                    <li><a href="#">View all messages</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="button dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-globe"></i>
+            <span class="bubble">10</span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <div class="content" tabindex="0" style="right: -15px;">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-cloud-upload info"></i><b>Daniel</b>is now following you<span class="date">2 minutes ago.</span></a></li>
+                        <li><a href="#"><i class="fa fa-male success"></i><b>Michael</b>is now following you<span class="date">15 minutes ago.</span></a></li>
+                        <li><a href="#"><i class="fa fa-bug warning"></i><b>Mia</b>commented on post<span class="date">30 minutes ago.</span></a></li>
+                    </ul>
+                </div>
+                <div class="pane" style="display: none;">
+                    <div class="slider" style="height: 20px; top: 0px;"></div>
+                </div>
+                <ul class="foot">
+                    <li><a href="#">View all activity</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="button">
+        <a class="speech-button">
+            <i class="fa fa-microphone"></i>
+        </a>
+    </li>
+    <li class="dropdown">
+        <a href="https://work.alibaba-inc.com/work/home" class="dropdown-toggle" data-toggle="dropdown">
+            ronghan.lrh
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="app.external({url: 'https://work.alibaba-inc.com/'})">内网首页</a></li>
+            <li><a href="#">我的阿里</a></li>
+            <li class="divider"></li>
+            <li><a href="https://login.alibaba-inc.com/ssoLogout.htm">退出登录</a></li>
+        </ul>
+    </li>
+</ul>

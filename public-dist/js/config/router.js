@@ -1,1 +1,0 @@
-"use strict";define(["angular","./module"],function(e,t){t.config(["$stateProvider",function(t){t.decorator("views",function(t,n){var r={},i=n(t);return e.forEach(i,function(e,n){if(!e.template&&!e.templateUrl&&!e.templateProvider){var i=t.name.replace(".","/");e.templateUrl="public/page/"+i+".html"}r[n]=e}),r})}])});

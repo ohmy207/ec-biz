@@ -1,1 +1,0 @@
-define(["angular","./module"],function(e,t){t.filter("stripTags",function(){return function(e){return typeof object=="string"?e.replace(/<\S[^><]*>/g,""):e}}),t.filter("truncate",function(){return function(e,t,n,r){return t=t||e.length,r=r||!1,n=n||"",typeof object!="string"||e.length<=t?e:e.substring(0,r?e.indexOf(" ",t)===-1?e.length:e.indexOf(" ",t):t)+n}})});

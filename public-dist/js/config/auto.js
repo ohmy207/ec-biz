@@ -1,1 +1,0 @@
-define(["angular","./module"],function(e,t){t.run(["$rootScope","$state","$stateParams","$templateCache",function(e,t,n,r){e.$state=t,e.$stateParams=n}])});

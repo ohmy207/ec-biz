@@ -1,1 +1,0 @@
-define(["angular","./module"],function(e,t){t.config(["$sceDelegateProvider","$locationProvider",function(e,t){t.html5Mode(!0),e.resourceUrlWhitelist(["self","http://**","https://**","ws://**","wss://**"])}])});

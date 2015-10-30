@@ -75,10 +75,11 @@ module.exports = function(grunt) {
         requirejs: {
             compile: {
                 options: {
-                    name: "main",
-                    baseUrl: "public/",
-                    mainConfigFile: "public/main.js",
-                    out: "public/main-dist.js",
+                    name: 'main',
+                    baseUrl: 'public/',
+                    optimize: 'none',
+                    mainConfigFile: 'public/main.js',
+                    out: 'public/main-dist.js',
                     preserveLicenseComments: false
                 }
             }

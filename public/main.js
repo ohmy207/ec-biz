@@ -39,7 +39,11 @@ require.config({
                 'jquery'
             ]
         },
-
+        'bootstrap': {
+            deps: [
+                'jquery'
+            ]
+        },
         'jquery': {
             exports: 'jquery'
         },
@@ -51,8 +55,5 @@ require.config({
     waitSeconds: 3
 });
 
-
 // kick start application... see startup.js
-require(['jquery', 'js/startup'], function() {
-    //nothing to do here...see bootstrap.js
-});
+require(['js/startup']);

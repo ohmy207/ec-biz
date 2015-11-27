@@ -71,8 +71,6 @@ grunt server
 - [x] 实现requireJS合并优化
 - [ ] 合并模板，使用 $templateCache
 
-
-
 ### 4、更多文档
 
 - [项目目录结构规范](doc/directory-structure.md)
